@@ -1,6 +1,6 @@
 
 # 10-things-test
-나를 알아보는 10가지 질문 테스트
+반려견의 성격검사 테스트
 - - -
 HTML5 + CSS3 + Vanilla JS로 만든 이미지 테스트 반응형 웹페이지입니다.  
 [개발일지 보기](https://dev-dain.tistory.com/22?category=816329)  
