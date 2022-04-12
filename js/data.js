@@ -1,97 +1,962 @@
 const qnaList = [
   {
-    q: '1. 하루 중 컨디션이 제일 좋은 시간은?',
+    q: '1. 사람들이 인사하면 반려견이 편안해하나요?',
     a: [
-      { answer: 'a. 아침', score: 2 },
-      { answer: 'b. 낮부터 이른 저녁', score: 4 },
-      { answer: 'c. 늦은 밤', score: 6 }
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
     ]
   },
   {
-    q: '2. 보통 어떻게 걸으시나요?',
+    q: '2. 반려견이 방해를 받으면 반려견이 공격적으로 행동하나요?',
     a: [
-      { answer: 'a. 큰 보폭으로 빨리', score: 6 },
-      { answer: 'b. 좁은 보폭으로 빨리', score: 4 },
-      { answer: 'c. 고개를 들고 보통 속도로', score: 7 },
-      { answer: 'd. 고개를 숙이고 보통 속도로', score: 2 },
-      { answer: 'e. 느린 속도로', score: 1 }
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
     ]
   },
   {
-    q: '3. 사람들과 대화할 때 당신의 제스처는?',
+    q: '3. 반려견이 다른 강아지에게 관심이 없나요?',
     a: [
-      { answer: 'a. 팔짱을 끼고 있다', score: 4 },
-      { answer: 'b. 깍지를 끼고 있다', score: 2 },
-      { answer: 'c. 한 손이나 양손을 주머니에 넣거나 엉덩이를 짚는다', score: 5 },
-      { answer: 'd. 대화하는 사람을 툭툭 치거나 건드린다', score: 7 },
-      { answer: 'e. 귀나 턱, 머리카락을 만진다', score: 6 }
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
     ]
   },
   {
-    q: '4. 앉아서 쉴 때 어떻게 앉으시나요?',
+    q: '4. 반려견이 종종 파괴적인 모습을 보이나요?',
     a: [
-      { answer: 'a. 다리를 가지런히 하고 단정히 앉는다', score: 4 },
-      { answer: 'b. 다리를 꼬고 앉는다', score: 6 },
-      { answer: 'c. 다리를 쭉 뻗고 앉는다', score: 2 },
-      { answer: 'd. 한쪽 다리를 접어 깔고 앉는다', score: 1 }
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
     ]
   },
   {
-    q: '5. 정말 즐거운 일이 생겼을 때 어떻게 반응하시나요?',
+    q: '5. 반려견이 다른 강아지에게 공격적으로 행동하나요?',
     a: [
-      { answer: 'a. 아주 크게 웃는다', score: 6 },
-      { answer: 'b. 웃긴 하되 엄청 크게 웃진 않는다', score: 4 },
-      { answer: 'c. 조용히 미소 짓는다', score: 3 },
-      { answer: 'd. 희미하게 겸연쩍은 미소를 짓는다', score: 5 }
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
     ]
   },
   {
-    q: '6. 파티나 모임에 갔을 때 어떻게 행동하시나요?',
+    q: '6. 반려견이 종종 불안한 모습을 보이나요?',
     a: [
-      { answer: 'a. 임팩트 있게 등장해 모두 내가 온 걸 알아차리게 한다', score: 6 },
-      { answer: 'b. 조용히 들어가서 아는 사람이 있는지 둘러본다', score: 4 },
-      { answer: 'c. 최대한 조용히 들어가서 아무도 내가 있는지 모르게 한다', score: 2 }
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
     ]
   },
   {
-    q: '7. 초집중하고 있는 당신에게 누군가 끼어들거나 말을 건다면?',
+    q: '7. 반려견이 칭찬을 좋아하나요?',
     a: [
-      { answer: 'a. 휴식이 반갑다', score: 6 },
-      { answer: 'b. 너무 짜증난다', score: 2 },
-      { answer: 'c. 상황에 따라 다르다', score: 4 }
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
     ]
   },
   {
-    q: '8. 어떤 색깔을 가장 좋아하시나요?',
+    q: '8. 다른 강아지으로부터 위협을 받을 경우 반려견이 공격적으로 반응하나요?',
     a: [
-      { answer: 'a. 빨강, 주황', score: 6 },
-      { answer: 'b. 검정', score: 7 },
-      { answer: 'c. 노랑, 하늘색', score: 5 },
-      { answer: 'd. 초록', score: 4 },
-      { answer: 'e. 남색, 보라', score: 3 },
-      { answer: 'f. 하양', score: 2 },
-      { answer: 'g. 갈색, 회색', score: 1 }
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
     ]
   },
   {
-    q: '9. 밤에 잠들기 직전에 어떻게 눕나요?',
+    q: '9. 반려견이 대담한 편에 속하나요?',
     a: [
-      { answer: 'a. 천장을 보고 똑바로 눕는다', score: 7 },
-      { answer: 'b. 배를 바닥에 깔고 엎드린다', score: 6 },
-      { answer: 'c. 옆으로 살짝 돌아 눕는다', score: 4 },
-      { answer: 'd. 한쪽 팔로 머리에 팔베개한다', score: 2 },
-      { answer: 'e. 머리 끝까지 이불을 덮는다', score: 1 }
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
     ]
   },
   {
-    q: '10. 어떤 꿈을 자주 꾸시나요?',
+    q: '10. 반려견이 종종 무기력한 모습을 보이나요?',
     a: [
-      { answer: 'a. 아래로 떨어지는 꿈', score: 4 },
-      { answer: 'b. 싸우는 꿈', score: 2 },
-      { answer: 'c. 사람이나 물건을 찾는 꿈', score: 3 },
-      { answer: 'd. 하늘을 날거나 물 위에 떠다니는 꿈', score: 5 },
-      { answer: 'e. 거의 꿈을 안 꾼다', score: 6 },
-      { answer: 'f. 항상 좋은 꿈만 꾼다', score: 1 }
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+    {
+    q: '11. 반려견을 부르면 바로 보호자에게 오나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '12. 반려견이 수줍음이 많은 편에 속하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '13. 반려견이 낯선 사람에게 공격적으로 행동하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '14. 반려견은 대게 보상을 얻고자 행동하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '15. 반려견이 다람쥐나 새와 같은 작은 동물 쫓기를 좋아하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '16. 반려견이 놀이를 하면 빨리 지루해하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '17. 반려견은 제지를 받을 경우 공격적으로 행동하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '18. 문이 열려있으면 반려견이 빠져나가려 하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '19. 반려견이 자신감 있는 편에 속하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '20. 반려견이 종종 지배적인 모습을 보이나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '21. 반려견이 종종 다른 강아지를 피하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '22. 반려견이 다른 동물을 죽인 적이 있나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '23. 다른 사람이 집에 오면 반려견이 공격적으로 행동하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '24. 반려견이 넘어지거나 무언가 스치면 쉽게 놀라나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '25. 반려견이 물건을 집요하게 물어뜯나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '26. 고양이가 보이면 반려견이 흥분하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '27. 반려견은 사나운 편에 속하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '28. 반려견이 병원 가는 것을 무서워하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '29. 반려견이 종종 목줄을 당기나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '30. 반려견이 사람 많은 것을 무서워하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '31. 반려견이 종종 장난감을 가지고 노나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '32. 반려견을 혼낼 경우 반려견이 쉽게 화를 내나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '33. 처음 보는 사람에게도 반려견이 친근하게 다가가나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '34. 반려견이 다른 개와 노는 데 무리가 없나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '35. 반려견이 사람에게서 유대감을 느끼려고 하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '36. 반려견이 다른 강아지에게 인사할 때 매너를 지키나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '37. 반려견이 보호자의 말과 행동에 주의를 기울이나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '38. 반려견이 새로운 환경에 잘 적응을 하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '39. 반려견이 사람(자전거, 조깅, 스케이트 등) 쫓아가기를 좋아하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '40. 반려견이 호기심이 많나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '41. 반려견이 다른 강아지로부터 음식을 지키려고 하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '42. 반려견이 통증에 민감한가요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '43. 반려견이 사람에게 위협을 느낄 때 공격적으로 행동하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '44. 반려견이 냉담한 성격인가요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+     {
+    q: '45. 반려견의 훈련 습득이 느린가요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '46. 반려견이 터깅(줄다리기)를 좋아하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '47. 반려견이 낯선 사람을 보면 겁을 먹나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '48. 반려견의 경계심이 많나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '49. 반려견이 다른 강아지와 장난감을 공유하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '50. 반려견의 행동 교정이 느린가요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '51. 반려견이 수의사를 만나면 공격적으로 행동하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '52. 반려견이 자주 뛰어오르거나 다른 강아지에게 올라타나요?(교배 제외)',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '53. 반려견이 계속 움직이기를 좋아하나요? ',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '54. 반려견이 아이들에게 겁을 먹나요??',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '55. 누군가가 집에 오면 반려견이 흥분하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '56. 반려견에게 물건이나 음식을 가만히 두라고 하면 실제로 그렇게 하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '57. 반려견은 다른 개에게 공격하거나 시도하는 경향이 있나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '58. 반려견은 놀라거나 겁먹고 나서 빠르게 진정하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '59. 공이나 장난감을 다른 데 두었을 때 반려견이 그것을 잘 찾아오나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '60. 반려견은 다른 강아지에게 친절한가요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '61. 반려견에게 제지를 하면 무섭게 행동하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '62. 반려견은 자신이 탐내는 물건을 필사적으로 지키나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '63. 반려견이 다정한가요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '64. 반려견이 보호자의 명령을 무시하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '65. 반려견은 고양이에게 공격적으로 행동하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '66. 반려견이 다른 사람으로부터 위협을 받을 경우 겁에 질려 하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '67. 반려견이 주위 사람을 잘 따라가나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '68. 반려견은 긴장하면 공격성을 보이나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '69. 반려견이 차분한 경향이 있나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '70. 반려견이 다른 강아지를 보면 겁에 질려하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '71. 산만한 상황에서도 반려견이 높은 집중력을 보이나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '72. 반려견이 다른 강아지를 보면 흥분하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '73. 반려견이 아이들에게 공격적으로 행동하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '74. 반려견이 손톱을 깎거나 귀 청소를 할 때 겁에 질려하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '75. 반려견이 다른 강아지에게 독단적이거나 강압적인가요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '76. 집 안에서 돌아다닐 때 보호자나 가족 구성원을 따라다니나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '77. 보호자가 앉아있으면 반려견도 가까이 있으려고 하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '78. 보호자가 앉아있으면 반려견이 관심 끄는 행동을 하나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+     {
+    q: '79. 보호자가 다른 사람 혹은 동물에게 애정 표현하면 반려견이 동요된 모습을 보이나요? ',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
+    ]
+  },
+      {
+    q: '80. 가족 구성원 중 한 사람에게만 강한 애착을 보이나요?',
+    a: [
+      { answer: '전혀 그렇지 않다', score: 1 },
+      { answer: '대체로 그렇지 않다', score: 2 },
+      { answer: '약간 그렇지 않다', score: 3 },
+      { answer: '보통이다', score: 4 },
+      { answer: '약간 그렇다', score: 5 },
+      { answer: '대체로 그렇다', score: 6 },
+      { answer: '매우 그렇다', score: 7 }
     ]
   }
 ]
