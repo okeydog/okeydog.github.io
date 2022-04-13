@@ -5,7 +5,7 @@ const u_name = document.querySelector('input[type=text]');
 const wrap = document.getElementById('wrap');
 const tabletMQL = window.matchMedia("all and (min-width: 768px)");
 const pcMQL = window.matchMedia("all and (min-width: 1024px)");
-const ENDPOINT = 10;
+const ENDPOINT = 80;
 const select = [];
 let qIdx = -1;
 
@@ -44,11 +44,107 @@ const copy = () => {
 }
 
 const calcScore = () => {
-  let point = 0;
-  for (let i = 0; i < ENDPOINT; i++) {
-    point += qnaList[i].a[select[i]].score;
+  let fear = 0;
+  let aggressive = 0;
+  let energetic = 0;
+  let sociable = 0;
+  const fearList = [1, 6, 9, 12, 19, 21, 24, 28, 30, 32, 36, 38, 42, 47, 54, 58, 61, 66, 70, 74];
+  const aggressiveList_Human = [2, 13, 17, 23, 33, 43, 51, 62, 68, 73];
+  const aggressiveList_Dog = [5, 8, 15, 20, 22, 26, 34, 39, 41, 49, 52, 57, 60, 65, 75];
+  const energeticList = [3, 7, 10, 14, 16, 25, 27, 31, 35, 40, 44, 46, 48, 53, 55, 59, 63, 67, 69, 72  ];
+  const sociableList = [76, 77, 78, 79, 80 ];
+
+  // for (let i = 0; i < ENDPOINT; i++) {
+  //   fear += qnaList[i].a[select[i]].score;
+  // }
+
+  for (let i = 0; i < fearList.length; i++) {
+    fear += fearList[i].a[select[i]].score;
   }
-  return point;
+  for (let i = 0; i < aggressiveList_Human.length; i++) {
+    aggressive += aggressiveList_Human[i].a[select[i]].score;
+  }
+  for (let i = 0; i < aggressiveList_Dog.length; i++) {
+    aggressive += aggressiveList_Dog[i].a[select[i]].score;
+  }
+  for (let i = 0; i < energeticList.length; i++) {
+    energetic += energeticList[i].a[select[i]].score;
+  }
+  for (let i = 0; i < sociableList.length; i++) {
+    sociable += sociableList[i].a[select[i]].score;
+  }
+
+  if (energetic >=40 && sociable >= 16 && aggressive >= 40 && fear >= 40  ) { //동적/관계/공격/높은두려움
+    num = 0; //천사의 탈을 쓴 악마犬
+
+  }
+  if (energetic >=40 && sociable >= 16 && aggressive >= 40 && fear < 40  ) { //동적/관계/공격/낮은두려움
+    num = 1; //오지랖 넓은 중재자
+
+  }
+  if (energetic >=40 && sociable < 16 && aggressive >= 40 && fear < 40  ) { //동적/독립/공격/낮은두려움
+    num = 2; //제멋대로 마이웨이犬
+
+  }
+  if (energetic >=40 && sociable < 16 && aggressive >= 40 && fear >= 40  ) { //동적/독립/공격/높은두려움
+    num = 3; //허세 부리는 상꼬맹이
+
+  }
+  /////////////////////////////////
+    if (energetic >=40 && sociable >= 16 && aggressive < 40 && fear >= 40  ) { //동적/관계/비공격/높은두려움
+    num = 4; //눈치 빠른 꼬맹이
+
+  }
+  if (energetic >=40 && sociable >= 16 && aggressive < 40 && fear < 40  ) { //동적/관계/비공격/낮은두려움
+    num = 5; //천진난만한 탐험대원
+
+  }
+  if (energetic >=40 && sociable < 16 && aggressive < 40 && fear < 40  ) { //동적/독립/비공격적/낮은두려움
+    num = 6; //자유로운 영혼
+
+  }
+  if (energetic >=40 && sociable < 16 && aggressive < 40 && fear >= 40  ) { //동적/독립/비공격적/높은두려움
+    num = 7; //호기심 많은 쫄보
+
+  }
+  ////////////////////////////////////
+    if (energetic <40 && sociable >= 16 && aggressive < 40 && fear >= 40  ) { //정적/관계/비공격/높은두려움
+    num = 8; //눈치보는 쭈구리
+
+  }
+  if (energetic <40 && sociable >= 16 && aggressive < 40 && fear < 40  ) { //정적/관계/비공격/낮은두려움
+    num = 9; //정석의 엄친아犬
+
+  }
+  if (energetic <40 && sociable < 16 && aggressive < 40 && fear < 40  ) { //정적/독립/비공격/낮은두려움
+    num = 10; //무념무상 창문바라기
+
+  }
+  if (energetic <40 && sociable < 16 && aggressive < 40 && fear >= 40  ) { //정적/독립/비공격적/높은두려움
+    num = 11; //방구석의 겁쟁이
+
+  }
+  //////////////////////////////////////
+    if (energetic <40 && sociable >= 16 && aggressive >= 40 && fear >= 40  ) { //정적/관계/공격/높은두려움
+    num = 12; //뻔뻔한 밀당 고수
+
+  }
+  if (energetic <40 && sociable >= 16 && aggressive >= 40 && fear < 40  ) { //정적/관계/공격/낮은두려움
+
+    num = 13; //우리집 꼬마 대장
+
+  }
+  if (energetic <40 && sociable < 16 && aggressive >= 40 && fear < 40  ) { //정적/독립/공격/낮은두려움
+
+    num = 14; //고독한 카리스마
+
+  }
+  if (energetic <40 && sociable < 16 && aggressive >= 40 && fear >= 40  ) { //정적/독립/공격적/높은두려움
+
+    num = 15; //까칠한 얼음공주
+
+  }
+  return num;
 }
 
 const sortResult = (point) => {
@@ -79,8 +175,9 @@ const goResult = () => {
   }
 
   const result = document.getElementById('result');
-  const point = calcScore();
-  const grade = sortResult(point);
+  // const point = calcScore();
+  // const grade = sortResult(point);
+  const grade = calcScore();
   const pTitle = document.querySelector('.p');
   const res_point = document.querySelector('.point');
   const pin = document.querySelector('.pin');
@@ -90,8 +187,8 @@ const goResult = () => {
   const animal = document.querySelector('.result');
   const desc = document.querySelector('.res');
 
-  pTitle.innerHTML = u_name.value + ' 님의 점수는...';
-  res_point.innerHTML = point + '점';
+  //pTitle.innerHTML = u_name.value + ' 님의 점수는...';
+  //res_point.innerHTML = point + '점';
   pin.style.marginLeft = infoList[grade].mLeft;
   res_img.src = img_url;
   res_img.alt = infoList[grade].name;
