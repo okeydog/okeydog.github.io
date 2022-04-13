@@ -59,19 +59,19 @@ const calcScore = () => {
   // }
 
   for (let i = 0; i < fearList.length; i++) {
-    fear += fearList[i].a[select[i]].score;
+    fear += qnaList[fearList[i]-1].a[select[i]].score;
   }
   for (let i = 0; i < aggressiveList_Human.length; i++) {
-    aggressive += aggressiveList_Human[i].a[select[i]].score;
+    aggressive += qnaList[aggressiveList_Human[i]-1].a[select[i]].score;
   }
   for (let i = 0; i < aggressiveList_Dog.length; i++) {
-    aggressive += aggressiveList_Dog[i].a[select[i]].score;
+    aggressive += qnaList[aggressiveList_Dog[i]-1].a[select[i]].score;
   }
   for (let i = 0; i < energeticList.length; i++) {
-    energetic += energeticList[i].a[select[i]].score;
+    energetic += qnaList[energeticList[i]-1].a[select[i]].score;
   }
   for (let i = 0; i < sociableList.length; i++) {
-    sociable += sociableList[i].a[select[i]].score;
+    sociable += qnaList[sociableList[i]-1].a[select[i]].score;
   }
 
   if (energetic >=40 && sociable >= 16 && aggressive >= 40 && fear >= 40  ) { //동적/관계/공격/높은두려움
