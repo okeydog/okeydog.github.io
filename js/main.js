@@ -5,7 +5,7 @@ const u_name = document.querySelector('input[type=text]');
 const wrap = document.getElementById('wrap');
 const tabletMQL = window.matchMedia("all and (min-width: 768px)");
 const pcMQL = window.matchMedia("all and (min-width: 1024px)");
-const ENDPOINT = 80;
+const ENDPOINT = 10;
 const select = [];
 let qIdx = -1;
 
@@ -147,23 +147,23 @@ const calcScore = () => {
   return num;
 }
 
-const sortResult = (point) => {
-  let num = 0;
-  if (point <= 20) {
-    num = 0;
-  } else if (point <= 30) {
-    num = 1;
-  } else if (point <= 40) {
-    num = 2;
-  } else if (point <= 50) {
-    num = 3;
-  } else if (point <= 60) {
-    num = 4;
-  } else {
-    num = 5;
-  }
-  return num;
-}
+// const sortResult = (point) => {
+//   let num = 0;
+//   if (point <= 20) {
+//     num = 0;
+//   } else if (point <= 30) {
+//     num = 1;
+//   } else if (point <= 40) {
+//     num = 2;
+//   } else if (point <= 50) {
+//     num = 3;
+//   } else if (point <= 60) {
+//     num = 4;
+//   } else {
+//     num = 5;
+//   }
+//   return num;
+// }
 
 const goResult = () => {
   if (pcMQL.matches) {
@@ -193,7 +193,7 @@ const goResult = () => {
   res_img.src = img_url;
   res_img.alt = infoList[grade].name;
   res_img.title = infoList[grade].name;
-  res_img_div.appendChild(res_img);
+  //res_img_div.appendChild(res_img);
   animal.innerHTML = infoList[grade].name;
   desc.innerHTML = infoList[grade].desc;
 
