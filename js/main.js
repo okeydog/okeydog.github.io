@@ -266,7 +266,7 @@ const addAnswer = (answerTxt, idx) => {
 
 
 const goNext = () => {
-  if (qIdx++ === qnaList.length - 1) {
+  if (qIdx++ === 10) {
     end();
     return;
   }
