@@ -5,7 +5,7 @@ const u_name = document.querySelector('input[type=text]');
 const wrap = document.getElementById('wrap');
 const tabletMQL = window.matchMedia("all and (min-width: 768px)");
 const pcMQL = window.matchMedia("all and (min-width: 1024px)");
-const ENDPOINT = 10;
+const ENDPOINT = 80;
 const select = [];
 let qIdx = -1;
 
@@ -275,7 +275,7 @@ const goNext = () => {
   const qNum = qnaList[qIdx];
   const q = document.querySelector('.q');
 
-  status.style.width = (80 * (qIdx + 1)) + '%';
+  status.style.width = (ENDPOINT * (qIdx + 1)) + '%';
   q.innerHTML = qNum.q;
   qna.style.animation =
     'fade-in 0.3s ease-in-out 0.4s forwards, ' +
