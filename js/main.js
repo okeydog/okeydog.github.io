@@ -255,7 +255,7 @@ const addAnswer = (answerTxt, idx) => {
       select[qIdx] = idx;
       a.innerHTML = '';
       parent.classList.remove('fade-out-5-4');
-      //goNext();
+      goNext();
     }, 800);
   });
 
@@ -275,7 +275,7 @@ const goNext = () => {
   const qNum = qnaList[qIdx];
   const q = document.querySelector('.q');
 
-  status.style.width = (ENDPOINT * (qIdx + 1)) + '%';
+  status.style.width = (80 * (qIdx + 1)) + '%';
   q.innerHTML = qNum.q;
   qna.style.animation =
     'fade-in 0.3s ease-in-out 0.4s forwards, ' +
