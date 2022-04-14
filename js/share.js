@@ -3,8 +3,17 @@ const title = '[반려견의 mbti] 반려견의 타고난 기질은?';
 const hash = '%23반려견 %23반려견성격 %23반려견테스트 ';
 
 const fb = () => {
+    let name = document.querySelector('.result').innerHTML;
+  switch (name) {
+    case '표범':
+    case '유니콘':
+      name += '이에요! ';
+      break;
+    default:
+      name += '예요! ';
+  }
   window.open('https://www.facebook.com/sharer/sharer.php?u='
-    + url + '&t=' + title + '' + hash,
+    + title + '%0A' + '저의 반려견은 ' + name + '' + hash + '%0A' + url,
     'facebooksharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
   return false;
 }
@@ -19,19 +28,37 @@ const tw = () => {
       name += '예요! ';
   }
   window.open('https://twitter.com/intent/tweet?text='
-    + title + '%0A' + '저는 ' + name + '' + hash + '%0A' + url,
+    + title + '%0A' + '저의 반려견은 ' + name + '' + hash + '%0A' + url,
     'twittersharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
   return false;
 }
 const nv = () => {
+    let name = document.querySelector('.result').innerHTML;
+  switch (name) {
+    case '표범':
+    case '유니콘':
+      name += '이에요! ';
+      break;
+    default:
+      name += '예요! ';
+  }
   window.open('http://share.naver.com/web/shareView.nhn?url='
-    + url + '&title=' + title,
+    + title + '%0A' + '저의 반려견은 ' + name + '' + hash + '%0A' + url,
     'naversharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
   return false;
 }
 const band = () => {
+      let name = document.querySelector('.result').innerHTML;
+  switch (name) {
+    case '표범':
+    case '유니콘':
+      name += '이에요! ';
+      break;
+    default:
+      name += '예요! ';
+  }
   window.open('https://band.us/plugin/share?url='
-    + url + '&title=' + title,
+    + title + '%0A' + '저의 반려견은 ' + name + '' + hash + '%0A' + url,
     'naversharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
   return false;
 }
