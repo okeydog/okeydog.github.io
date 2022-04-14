@@ -266,7 +266,7 @@ const addAnswer = (answerTxt, idx) => {
 
 
 const goNext = () => {
-  if (qIdx++ === 10) {
+  if (qIdx++ === qnaList.length - 1) {
     end();
     return;
   }
@@ -275,7 +275,7 @@ const goNext = () => {
   const qNum = qnaList[qIdx];
   const q = document.querySelector('.q');
 
-  status.style.width = (ENDPOINT * (qIdx + 1)) + '%';
+  status.style.width = 1;
   q.innerHTML = qNum.q;
   qna.style.animation =
     'fade-in 0.3s ease-in-out 0.4s forwards, ' +
