@@ -1,6 +1,6 @@
-const url = 'https://dev-dain.github.io/10-things-test';
-const title = '[이미지테스트] 나를 알아보는 10가지 질문 ';
-const hash = '%2310_things_test %233분이미지테스트 %23이미지테스트 ';
+const url = 'https://okeydog.github.io/';
+const title = '[반려견의 mbti] 반려견의 타고난 기질은?';
+const hash = '%23반려견 %23반려견성격 %23반려견테스트 ';
 
 const fb = () => {
   window.open('https://www.facebook.com/sharer/sharer.php?u='
