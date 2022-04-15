@@ -187,8 +187,8 @@ const goResult = () => {
   const animal = document.querySelector('.result');
   const desc = document.querySelector('.res');
 
-  //pTitle.innerHTML = u_name.value + ' 님의 점수는...';
-  //res_point.innerHTML = point + '점';
+  pTitle.innerHTML = u_name.value + ' 님의 반려견 성격은...';
+  res_point.innerHTML = infoList[grade].to;
   pin.style.marginLeft = infoList[grade].mLeft;
   res_img.src = img_url;
   res_img.alt = infoList[grade].name;
@@ -275,7 +275,7 @@ const goNext = () => {
   const qNum = qnaList[qIdx];
   const q = document.querySelector('.q');
 
-  status.style.width = ((10 * (qIdx + 1)))/80 + '%';
+  status.style.width = ((10 * (qIdx + 1)))/8 + '%';
   q.innerHTML = qNum.q;
   qna.style.animation =
     'fade-in 0.3s ease-in-out 0.4s forwards, ' +
