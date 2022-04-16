@@ -62,30 +62,30 @@ const calcScore = () => {
     answerList[i] =  qnaList[i].a[select[i]].score;
   }
   for (let i = 0; i < fearList.length; i++) {
-    console.log( "  두려움  :" +qnaList[fearList[i]-1].q+  "문항  "+answerList[fearList[i]-1]+"         "+   fear);
+    //onsole.log( "  두려움  :" +qnaList[fearList[i]-1].q+  "문항  "+answerList[fearList[i]-1]+"         "+   fear);
     fear += answerList[fearList[i]-1];
   }
   for (let i = 0; i < aggressiveList_Human.length; i++) {
-    console.log(  "  공격1  :"  +qnaList[aggressiveList_Human[i]-1].q+  "문항"+ answerList[aggressiveList_Human[i]-1]+"        "+   aggressive);
+    //console.log(  "  공격1  :"  +qnaList[aggressiveList_Human[i]-1].q+  "문항"+ answerList[aggressiveList_Human[i]-1]+"        "+   aggressive);
     aggressive += answerList[aggressiveList_Human[i]-1];
 
   }
   for (let i = 0; i < aggressiveList_Dog.length; i++) {
-    console.log( "  공격2  :"  +qnaList[aggressiveList_Dog[i]-1].q+  "문항"+ answerList[aggressiveList_Dog[i]-1] +"        "+   aggressive);
+    //console.log( "  공격2  :"  +qnaList[aggressiveList_Dog[i]-1].q+  "문항"+ answerList[aggressiveList_Dog[i]-1] +"        "+   aggressive);
     aggressive += answerList[aggressiveList_Dog[i]-1];
   }
   for (let i = 0; i < energeticList.length; i++) {
-    console.log( "  활동성  :" +qnaList[energeticList[i]-1].q+  "문항"+ answerList[energeticList[i]-1]+"         "+   energetic);
+    //console.log( "  활동성  :" +qnaList[energeticList[i]-1].q+  "문항"+ answerList[energeticList[i]-1]+"         "+   energetic);
     energetic +=answerList[energeticList[i]-1];
   }
   for (let i = 0; i < sociableList.length; i++) {
-    console.log( "  사회성  :" +qnaList[sociableList[i]-1].q+  "문항"+ answerList[sociableList[i]-1]+"        "+   sociable);
+    //console.log( "  사회성  :" +qnaList[sociableList[i]-1].q+  "문항"+ answerList[sociableList[i]-1]+"        "+   sociable);
     sociable += answerList[sociableList[i]-1];
 
   }
 
 
-  console.log("총합!!!!!  :" + "두려움 : "+   fear +"  공격성:   "+aggressive+  "  활동성:    "+energetic+"  사회성:   "+ sociable);
+  //console.log("총합!!!!!  :" + "두려움 : "+   fear +"  공격성:   "+aggressive+  "  활동성:    "+energetic+"  사회성:   "+ sociable);
   if (energetic >=80 && sociable >= 20 && aggressive >= 80 && fear >= 80  ) { //동적/관계/공격/높은두려움
     num = 0; //천사의 탈을 쓴 악마犬
 
@@ -200,13 +200,13 @@ const goResult = () => {
   const desc = document.querySelector('.res');
 
   pTitle.innerHTML = infoList[grade].to;
-  res_point.innerHTML = infoList[grade].from;
+  res_point.innerHTML = infoList[grade].name;
   //pin.style.marginLeft = infoList[grade].mLeft;
   res_img.src = img_url;
   res_img.alt = infoList[grade].name;
   res_img.title = infoList[grade].name;
   res_img_div.appendChild(res_img);
-  animal.innerHTML = infoList[grade].name;
+  animal.innerHTML = infoList[grade].from;
   desc.innerHTML = infoList[grade].desc;
 
   setTimeout(() => {
