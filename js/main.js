@@ -48,6 +48,7 @@ const calcScore = () => {
   let aggressive = 0;
   let energetic = 0;
   let sociable = 0;
+  var answerList = new Array(80);
   const fearList = [1, 6, 9, 12, 19, 21, 24, 28, 30, 32, 36, 38, 42, 47, 54, 58, 61, 66, 70, 74];
   const aggressiveList_Human = [2, 13, 17, 23, 33, 43, 51, 62, 68, 73];
   const aggressiveList_Dog = [5, 8, 15, 20, 22, 26, 34, 39, 41, 49, 52, 57, 60, 65, 75];
@@ -57,23 +58,34 @@ const calcScore = () => {
   // for (let i = 0; i < ENDPOINT; i++) {
   //   fear += qnaList[i].a[select[i]].score;
   // }
-
+  for (let i = 0; i < qnaList.length; i++) {
+    answerList[i] =  qnaList[i].a[select[i]].score;
+  }
   for (let i = 0; i < fearList.length; i++) {
-    fear += qnaList[fearList[i]-1].a[select[i]].score;
+    console.log( "  두려움  :" +qnaList[fearList[i]-1].q+  "문항  "+answerList[fearList[i]-1]+"         "+   fear);
+    fear += answerList[fearList[i]-1];
   }
   for (let i = 0; i < aggressiveList_Human.length; i++) {
-    aggressive += qnaList[aggressiveList_Human[i]-1].a[select[i]].score;
+    console.log(  "  공격1  :"  +qnaList[aggressiveList_Human[i]-1].q+  "문항"+ answerList[aggressiveList_Human[i]-1]+"        "+   aggressive);
+    aggressive += answerList[aggressiveList_Human[i]-1];
+
   }
   for (let i = 0; i < aggressiveList_Dog.length; i++) {
-    aggressive += qnaList[aggressiveList_Dog[i]-1].a[select[i]].score;
+    console.log( "  공격2  :"  +qnaList[aggressiveList_Dog[i]-1].q+  "문항"+ answerList[aggressiveList_Dog[i]-1] +"        "+   aggressive);
+    aggressive += answerList[aggressiveList_Dog[i]-1];
   }
   for (let i = 0; i < energeticList.length; i++) {
-    energetic += qnaList[energeticList[i]-1].a[select[i]].score;
+    console.log( "  활동성  :" +qnaList[energeticList[i]-1].q+  "문항"+ answerList[energeticList[i]-1]+"         "+   energetic);
+    energetic +=answerList[energeticList[i]-1];
   }
   for (let i = 0; i < sociableList.length; i++) {
-    sociable += qnaList[sociableList[i]-1].a[select[i]].score;
+    console.log( "  사회성  :" +qnaList[sociableList[i]-1].q+  "문항"+ answerList[sociableList[i]-1]+"        "+   sociable);
+    sociable += answerList[sociableList[i]-1];
+
   }
 
+
+  console.log("총합!!!!!  :" + "두려움 : "+   fear +"  공격성:   "+aggressive+  "  활동성:    "+energetic+"  사회성:   "+ sociable);
   if (energetic >=40 && sociable >= 16 && aggressive >= 40 && fear >= 40  ) { //동적/관계/공격/높은두려움
     num = 0; //천사의 탈을 쓴 악마犬
 
