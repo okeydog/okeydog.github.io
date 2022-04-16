@@ -180,16 +180,16 @@ const goResult = () => {
   const grade = calcScore();
   const pTitle = document.querySelector('.p');
   const res_point = document.querySelector('.point');
-  const pin = document.querySelector('.pin');
+  // const pin = document.querySelector('.pin');
   const img_url = 'img/image-' + grade + '.png';
   const res_img = document.createElement('img');
   const res_img_div = document.querySelector('.art');
   const animal = document.querySelector('.result');
   const desc = document.querySelector('.res');
 
-  pTitle.innerHTML = u_name.value + ' 님의 반려견 성격은...';
-  res_point.innerHTML = infoList[grade].to;
-  pin.style.marginLeft = infoList[grade].mLeft;
+  pTitle.innerHTML = infoList[grade].to;
+  res_point.innerHTML = infoList[grade].from;
+  //pin.style.marginLeft = infoList[grade].mLeft;
   res_img.src = img_url;
   res_img.alt = infoList[grade].name;
   res_img.title = infoList[grade].name;
