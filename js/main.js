@@ -86,72 +86,72 @@ const calcScore = () => {
 
 
   console.log("총합!!!!!  :" + "두려움 : "+   fear +"  공격성:   "+aggressive+  "  활동성:    "+energetic+"  사회성:   "+ sociable);
-  if (energetic >=40 && sociable >= 16 && aggressive >= 40 && fear >= 40  ) { //동적/관계/공격/높은두려움
+  if (energetic >=80 && sociable >= 20 && aggressive >= 80 && fear >= 80  ) { //동적/관계/공격/높은두려움
     num = 0; //천사의 탈을 쓴 악마犬
 
   }
-  if (energetic >=40 && sociable >= 16 && aggressive >= 40 && fear < 40  ) { //동적/관계/공격/낮은두려움
+  if (energetic >=80 && sociable >= 20 && aggressive >= 80 && fear < 80  ) { //동적/관계/공격/낮은두려움
     num = 1; //오지랖 넓은 중재자
 
   }
-  if (energetic >=40 && sociable < 16 && aggressive >= 40 && fear < 40  ) { //동적/독립/공격/낮은두려움
+  if (energetic >=80 && sociable < 20 && aggressive >= 80 && fear < 80  ) { //동적/독립/공격/낮은두려움
     num = 2; //제멋대로 마이웨이犬
 
   }
-  if (energetic >=40 && sociable < 16 && aggressive >= 40 && fear >= 40  ) { //동적/독립/공격/높은두려움
+  if (energetic >=80 && sociable < 20 && aggressive >= 80 && fear >= 80  ) { //동적/독립/공격/높은두려움
     num = 3; //허세 부리는 상꼬맹이
 
   }
   /////////////////////////////////
-    if (energetic >=40 && sociable >= 16 && aggressive < 40 && fear >= 40  ) { //동적/관계/비공격/높은두려움
+    if (energetic >=80 && sociable >= 20 && aggressive < 80 && fear >= 80  ) { //동적/관계/비공격/높은두려움
     num = 4; //눈치 빠른 꼬맹이
 
   }
-  if (energetic >=40 && sociable >= 16 && aggressive < 40 && fear < 40  ) { //동적/관계/비공격/낮은두려움
+  if (energetic >=80 && sociable >= 20 && aggressive < 80 && fear < 80  ) { //동적/관계/비공격/낮은두려움
     num = 5; //천진난만한 탐험대원
 
   }
-  if (energetic >=40 && sociable < 16 && aggressive < 40 && fear < 40  ) { //동적/독립/비공격적/낮은두려움
+  if (energetic >=80 && sociable < 20 && aggressive < 80 && fear < 80  ) { //동적/독립/비공격적/낮은두려움
     num = 6; //자유로운 영혼
 
   }
-  if (energetic >=40 && sociable < 16 && aggressive < 40 && fear >= 40  ) { //동적/독립/비공격적/높은두려움
+  if (energetic >=80 && sociable < 20 && aggressive < 80 && fear >= 80  ) { //동적/독립/비공격적/높은두려움
     num = 7; //호기심 많은 쫄보
 
   }
   ////////////////////////////////////
-    if (energetic <40 && sociable >= 16 && aggressive < 40 && fear >= 40  ) { //정적/관계/비공격/높은두려움
+    if (energetic <80 && sociable >= 20 && aggressive < 80 && fear >= 80  ) { //정적/관계/비공격/높은두려움
     num = 8; //눈치보는 쭈구리
 
   }
-  if (energetic <40 && sociable >= 16 && aggressive < 40 && fear < 40  ) { //정적/관계/비공격/낮은두려움
+  if (energetic <80 && sociable >= 20 && aggressive < 80 && fear < 80  ) { //정적/관계/비공격/낮은두려움
     num = 9; //정석의 엄친아犬
 
   }
-  if (energetic <40 && sociable < 16 && aggressive < 40 && fear < 40  ) { //정적/독립/비공격/낮은두려움
+  if (energetic <80 && sociable < 20 && aggressive < 80 && fear < 80  ) { //정적/독립/비공격/낮은두려움
     num = 10; //무념무상 창문바라기
 
   }
-  if (energetic <40 && sociable < 16 && aggressive < 40 && fear >= 40  ) { //정적/독립/비공격적/높은두려움
+  if (energetic <80 && sociable < 20 && aggressive < 80 && fear >= 80  ) { //정적/독립/비공격적/높은두려움
     num = 11; //방구석의 겁쟁이
 
   }
   //////////////////////////////////////
-    if (energetic <40 && sociable >= 16 && aggressive >= 40 && fear >= 40  ) { //정적/관계/공격/높은두려움
+    if (energetic <80 && sociable >= 20 && aggressive >= 80 && fear >= 80  ) { //정적/관계/공격/높은두려움
     num = 12; //뻔뻔한 밀당 고수
 
   }
-  if (energetic <40 && sociable >= 16 && aggressive >= 40 && fear < 40  ) { //정적/관계/공격/낮은두려움
+  if (energetic <80 && sociable >= 20 && aggressive >= 80 && fear < 80  ) { //정적/관계/공격/낮은두려움
 
     num = 13; //우리집 꼬마 대장
 
   }
-  if (energetic <40 && sociable < 16 && aggressive >= 40 && fear < 40  ) { //정적/독립/공격/낮은두려움
+  if (energetic <80 && sociable < 20 && aggressive >= 80 && fear < 80  ) { //정적/독립/공격/낮은두려움
 
     num = 14; //고독한 카리스마
 
   }
-  if (energetic <40 && sociable < 16 && aggressive >= 40 && fear >= 40  ) { //정적/독립/공격적/높은두려움
+  if (energetic <80 && sociable < 20 && aggressive >= 80 && fear >= 80  ) { //정적/독립/공격적/높은두려움
 
     num = 15; //까칠한 얼음공주
 
