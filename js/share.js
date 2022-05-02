@@ -45,7 +45,8 @@ const nv = () => {
     default:
       name += '예요! ';
   }
-  Kakao.Link.sendDefault({
+  window.Kakao.init('4bade7459a7f9b3f550f30f712bab58c');
+  window.Kakao.Link.createDefaultButton({
   objectType: "feed",
   content: {
     title: title, // 공유될 제목
