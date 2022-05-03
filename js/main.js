@@ -275,10 +275,27 @@ const addAnswer = (answerTxt, idx) => {
     'going-down 0.25s forwards, fade-in 0.25s forwards', 50);
   a.appendChild(answer);
 }
+///////////////////////////////////////////////
+function saveToFirebase(email, result) {
+    var emailObject = {
+        email: email,
+        result: result
+    };
 
+    firebase.database().ref('okeydogusers').push().set(emailObject)
+        .then(function(snapshot) {
+            success(); // some success method
+        }, function(error) {
+            console.log('error' + error);
+            error(); // some error method
+        });
+}
+
+////////////////////////////////////////
 
 const goNext = () => {
   if (qIdx++ === qnaList.length - 1) {
+    saveToFirebase(u_name.value,infoList[grade].name);
     end();
     return;
   }
