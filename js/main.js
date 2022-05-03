@@ -321,7 +321,7 @@ const goNext = () => {
 }
 
 const begin = () => {
-  saveToFirebase(u_name.value,"ss");
+  console.log("접속");
   const welcome = document.getElementById('welcome');
   header.style.animation =
     'going-up 0.4s forwards, ' +
