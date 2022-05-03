@@ -9,6 +9,54 @@ const ENDPOINT = 80;
 const select = [];
 let qIdx = -1;
 
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
+    authDomain: "suerveyokeydoggy.firebaseapp.com",
+    databaseURL: "https://suerveyokeydoggy-default-rtdb.firebaseio.com",
+    projectId: "suerveyokeydoggy",
+    storageBucket: "suerveyokeydoggy.appspot.com",
+    messagingSenderId: "509585982228",
+    appId: "1:509585982228:web:5d589b8250bf518800b801",
+    measurementId: "G-DEY3MGS3XH"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  getAnalytics(app);
+  export const db = getFirestore(app);
+
+import { db } from "./firebase";
+import { collection, addDoc } from "firebase/firestore/lite";
+
+function App() {
+  const usersCollectionRef = collection(db, "users");
+
+  // users 콜렉션에 { name: 'kyounghwan', age: 29 }인 row를 추가합니다.
+  const addData = async () => {
+    try {
+      const res = await addDoc(usersCollectionRef, {
+        age: 29,
+        name: "kyounghwan"
+      });
+      console.log(res); // res는 undefined입니다.
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  return <button onClick={addData}>추가</button>;
+}
+
+
+
+
 const goTo = (dest) => {
   let elem;
   let elemTop;
@@ -45,6 +93,7 @@ const copy = () => {
 
 const calcScore = () => {
   let fear = 0;
+  let num=0;
   let aggressive = 0;
   let energetic = 0;
   let sociable = 0;
@@ -276,27 +325,26 @@ const addAnswer = (answerTxt, idx) => {
   a.appendChild(answer);
 }
 ///////////////////////////////////////////////
-function saveToFirebase(email, result) {
-    var emailObject = {
-        email: email,
-        result: result
-    };
-    console.log("접속");
-    console.log(firebase.database());
-    firebase.database().ref('okeydogusers').push().set(emailObject)
-        .then(function(snapshot) {
-            success(); // some success method
-        }, function(error) {
-            console.log('error' + error);
-            error(); // some error method
-        });
-}
+// function saveToFirebase(email, result) {
+//     var emailObject = {
+//         email: email,
+//         result: result
+//     };
+//     console.log("접속");
+//     console.log(firebase.database());
+//     firebase.database().ref('okeydogusers').push().set(emailObject)
+//         .then(function(snapshot) {
+//             success(); // some success method
+//         }, function(error) {
+//             console.log('error' + error);
+//             error(); // some error method
+//         });
+// }
 
 ////////////////////////////////////////
 
 const goNext = () => {
   if (qIdx++ === qnaList.length - 1) {
-    saveToFirebase(u_name.value,infoList[grade].name);
     end();
     return;
   }
@@ -322,7 +370,7 @@ const goNext = () => {
 
 const begin = () => {
   console.log("접속");
-  saveToFirebase(u_name.value,"ss");
+   App;
   const welcome = document.getElementById('welcome');
   header.style.animation =
     'going-up 0.4s forwards, ' +
