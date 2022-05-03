@@ -9,27 +9,28 @@ const ENDPOINT = 80;
 const select = [];
 let qIdx = -1;
 
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getFirestore } from "firebase/firestore/lite";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
-    authDomain: "suerveyokeydoggy.firebaseapp.com",
-    databaseURL: "https://suerveyokeydoggy-default-rtdb.firebaseio.com",
-    projectId: "suerveyokeydoggy",
-    storageBucket: "suerveyokeydoggy.appspot.com",
-    messagingSenderId: "509585982228",
-    appId: "1:509585982228:web:5d589b8250bf518800b801",
-    measurementId: "G-DEY3MGS3XH"
-  };
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
+  authDomain: "suerveyokeydoggy.firebaseapp.com",
+  databaseURL: "https://suerveyokeydoggy-default-rtdb.firebaseio.com",
+  projectId: "suerveyokeydoggy",
+  storageBucket: "suerveyokeydoggy.appspot.com",
+  messagingSenderId: "509585982228",
+  appId: "1:509585982228:web:5d589b8250bf518800b801",
+  measurementId: "G-DEY3MGS3XH"
+};
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  getAnalytics(app);
-  export const db = getFirestore(app);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 import { db } from "./firebase";
 import { collection, addDoc } from "firebase/firestore/lite";
