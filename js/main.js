@@ -281,7 +281,8 @@ function saveToFirebase(email, result) {
         email: email,
         result: result
     };
-
+    console.log("접속");
+    console.log(firebase.database());
     firebase.database().ref('okeydogusers').push().set(emailObject)
         .then(function(snapshot) {
             success(); // some success method
