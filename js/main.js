@@ -282,7 +282,7 @@ function saveToFirebase(email, result) {
         result: result
     };
 
-    firebase.database().ref('okeydogusers').push().set(emailObject)
+    firebase.database().set(emailObject)
         .then(function(snapshot) {
             success(); // some success method
         }, function(error) {
