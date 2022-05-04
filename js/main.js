@@ -27,9 +27,11 @@ const firebaseConfig = {
   appId: "1:509585982228:web:5d589b8250bf518800b801",
   measurementId: "G-DEY3MGS3XH"
 };
+ console.log( "시작");
+
  initializeApp(firebaseConfig);
-
-
+ console.log( firebaseConfig);
+ console.log( initializeApp(firebaseConfig));
 const goTo = (dest) => {
   let elem;
   let elemTop;
