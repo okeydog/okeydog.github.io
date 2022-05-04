@@ -10,28 +10,7 @@ const select = [];
 let qIdx = -1;
 
 
-  const {initializeApp} = require("https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js");
-  const {getAnalytics} = require("https://www.gstatic.com/firebasejs/9.7.0/firebase-analytics.js");
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
-  authDomain: "suerveyokeydoggy.firebaseapp.com",
-  databaseURL: "https://suerveyokeydoggy-default-rtdb.firebaseio.com",
-  projectId: "suerveyokeydoggy",
-  storageBucket: "suerveyokeydoggy.appspot.com",
-  messagingSenderId: "509585982228",
-  appId: "1:509585982228:web:5d589b8250bf518800b801",
-  measurementId: "G-DEY3MGS3XH"
-};
- console.log( "시작");
-
- initializeApp(firebaseConfig);
- console.log( firebaseConfig);
- console.log( initializeApp(firebaseConfig));
 const goTo = (dest) => {
   let elem;
   let elemTop;
@@ -300,21 +279,21 @@ const addAnswer = (answerTxt, idx) => {
   a.appendChild(answer);
 }
 ///////////////////////////////////////////////
-// function saveToFirebase(email, result) {
-//     var emailObject = {
-//         email: email,
-//         result: result
-//     };
-//     console.log("접속");
-//     console.log(firebase.database());
-//     firebase.database().ref('okeydogusers').push().set(emailObject)
-//         .then(function(snapshot) {
-//             success(); // some success method
-//         }, function(error) {
-//             console.log('error' + error);
-//             error(); // some error method
-//         });
-// }
+ function saveToFirebase(email, result) {
+     var emailObject = {
+         email: email,
+         result: result
+     };
+     console.log("접속");
+     console.log(firebase.database());
+     firebase.database().ref('okeydogusers').push().set(emailObject)
+         .then(function(snapshot) {
+             success(); // some success method
+         }, function(error) {
+             console.log('error' + error);
+             error(); // some error method
+         });
+ }
 
 ////////////////////////////////////////
 
@@ -345,7 +324,7 @@ const goNext = () => {
 
 const begin = () => {
   console.log("접속");
-  // App;
+  saveToFirebas("11","12");
   const welcome = document.getElementById('welcome');
   header.style.animation =
     'going-up 0.4s forwards, ' +
