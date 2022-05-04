@@ -8,7 +8,7 @@ const pcMQL = window.matchMedia("all and (min-width: 1024px)");
 const ENDPOINT = 80;
 const select = [];
 let qIdx = -1;
-
+var trueVariable1 = false;
 
 
 
@@ -326,7 +326,7 @@ const goNext = () => {
 
 const begin = () => {
   console.log("접속");
-  saveToFirebas("11","12");
+  trueVariable1= true;
   const welcome = document.getElementById('welcome');
   header.style.animation =
     'going-up 0.4s forwards, ' +
