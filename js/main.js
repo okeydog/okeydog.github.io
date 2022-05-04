@@ -33,7 +33,6 @@ let trueVariable1 = false;
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 
-getAnalytics(app);
 console.log("start");
 
 // 이 값을 사용합니다.
