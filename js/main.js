@@ -8,21 +8,22 @@ const pcMQL = window.matchMedia("all and (min-width: 1024px)");
 const ENDPOINT = 80;
 const select = [];
 let qIdx = -1;
-import * as firebase from "firebase/app";
 
-// 사용할 firebase 기능 추가
-import "firebase/auth";
-import "firebase/firestore";
-  const firebaseConfig = {
-    apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
-    authDomain: "suerveyokeydoggy.firebaseapp.com",
-    databaseURL: "https://suerveyokeydoggy-default-rtdb.firebaseio.com",
-    projectId: "suerveyokeydoggy",
-    storageBucket: "suerveyokeydoggy.appspot.com",
-    messagingSenderId: "509585982228",
-    appId: "1:509585982228:web:5d589b8250bf518800b801",
-    measurementId: "G-DEY3MGS3XH"
-  };
+
+import firebase from 'firebase/app';
+import 'firebase/database';
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: 'ABCDEFGH-i-jkl_m_1234567890',
+  authDomain: '<project-id>.firebaseapp.com',
+  databaseURL: 'https://<project-id>-default-rtdb.firebaseio.com',
+  projectId: '<project-id>',
+  storageBucket: '<project-id>.appspot.com',
+  messagingSenderId: '123456789',
+  appId: '1:123456789:web:abcdefghi123456789',
+};
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
