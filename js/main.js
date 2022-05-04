@@ -381,8 +381,7 @@ const load = () => {
       start_btn.disabled = true;
 
       begin();
-       var  test1 ="ss";
-export { test1 as default};
+
     } catch (err) {
       msg.innerHTML = err;
     }
