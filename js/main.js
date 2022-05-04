@@ -10,8 +10,8 @@ const select = [];
 let qIdx = -1;
 
 
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+  const {initializeApp} = require("https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js");
+  const {getAnalytics} = require("https://www.gstatic.com/firebasejs/9.7.0/firebase-analytics.js");
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
