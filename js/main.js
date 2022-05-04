@@ -8,13 +8,13 @@ const pcMQL = window.matchMedia("all and (min-width: 1024px)");
 const ENDPOINT = 80;
 const select = [];
 let qIdx = -1;
-let trueVariable1 = false;
+
 
 // Import the functions you need from the SDKs you need
 
 
   // Initialize Firebase
-console.log("start2");
+
 
 // 이 값을 사용합니다.
 
