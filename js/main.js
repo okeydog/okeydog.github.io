@@ -9,55 +9,25 @@ const ENDPOINT = 80;
 const select = [];
 let qIdx = -1;
 
-// Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-// // TODO: Add SDKs for Firebase products that you want to use
-// // https://firebase.google.com/docs/web/setup#available-libraries
-//
-// // Your web app's Firebase configuration
-// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// const firebaseConfig = {
-//   apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
-//   authDomain: "suerveyokeydoggy.firebaseapp.com",
-//   databaseURL: "https://suerveyokeydoggy-default-rtdb.firebaseio.com",
-//   projectId: "suerveyokeydoggy",
-//   storageBucket: "suerveyokeydoggy.appspot.com",
-//   messagingSenderId: "509585982228",
-//   appId: "1:509585982228:web:5d589b8250bf518800b801",
-//   measurementId: "G-DEY3MGS3XH"
-// };
-//
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);/
-//
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
-//
-// import { db } from "./firebase";
-// import { collection, addDoc } from "firebase/firestore/lite";
-//
-// function App() {
-//   const usersCollectionRef = collection(db, "users");
-//
-//   // users 콜렉션에 { name: 'kyounghwan', age: 29 }인 row를 추가합니다.
-//   const addData = async () => {
-//     try {
-//       const res = await addDoc(usersCollectionRef, {
-//         age: 29,
-//         name: "kyounghwan"
-//       });
-//       console.log(res); // res는 undefined입니다.
-//     } catch (e) {
-//       console.log(e);
-//     }
-//   };
-//   return <button onClick={addData}>추가</button>;
-// }
-//
 
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
+  authDomain: "suerveyokeydoggy.firebaseapp.com",
+  databaseURL: "https://suerveyokeydoggy-default-rtdb.firebaseio.com",
+  projectId: "suerveyokeydoggy",
+  storageBucket: "suerveyokeydoggy.appspot.com",
+  messagingSenderId: "509585982228",
+  appId: "1:509585982228:web:5d589b8250bf518800b801",
+  measurementId: "G-DEY3MGS3XH"
+};
+ initializeApp(firebaseConfig);
 
 
 const goTo = (dest) => {
