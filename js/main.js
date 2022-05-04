@@ -15,7 +15,7 @@ let trueVariable1 = false;
 
   // Initialize Firebase
 console.log("start2");
-console.log(app1);
+
 // 이 값을 사용합니다.
 
 const goTo = (dest) => {
