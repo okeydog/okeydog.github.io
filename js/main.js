@@ -382,7 +382,7 @@ const load = () => {
 
       begin();
        var  test1 ="ss";
-export { test1};
+export { test1 as default};
     } catch (err) {
       msg.innerHTML = err;
     }
@@ -390,5 +390,5 @@ export { test1};
 
 }
  var  test1 ="ss";
-export { test1};
+export { test1 as default};
 window.onload = load();
