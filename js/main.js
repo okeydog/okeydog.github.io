@@ -10,27 +10,9 @@ const select = [];
 let qIdx = -1;
 
 
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getFirestore } from "firebase/firestore/lite";
 
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: 'ABCDEFGH-i-jkl_m_1234567890',
-  authDomain: '<project-id>.firebaseapp.com',
-  databaseURL: 'https://<project-id>-default-rtdb.firebaseio.com',
-  projectId: '<project-id>',
-  storageBucket: '<project-id>.appspot.com',
-  messagingSenderId: '123456789',
-  appId: '1:123456789:web:abcdefghi123456789',
-};
 
-const app = initializeApp(firebaseConfig);
-getAnalytics(app);
-
-// 이 값을 사용합니다.
-export const db = getFirestore(app);
 const goTo = (dest) => {
   let elem;
   let elemTop;
