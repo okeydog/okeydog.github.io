@@ -381,12 +381,14 @@ const load = () => {
       start_btn.disabled = true;
 
       begin();
+       var  test1 ="ss";
+export { test1};
     } catch (err) {
       msg.innerHTML = err;
     }
   });
 
 }
- var  test1 = u_name.value;
+ var  test1 ="ss";
 export { test1};
 window.onload = load();
