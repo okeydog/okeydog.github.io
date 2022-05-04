@@ -350,7 +350,6 @@ const goNext = () => {
 
 const begin = () => {
   console.log("접속");
-  trueVariable1= true;
   const welcome = document.getElementById('welcome');
   header.style.animation =
     'going-up 0.4s forwards, ' +
