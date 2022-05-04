@@ -301,10 +301,7 @@ const addAnswer = (answerTxt, idx) => {
              error(); // some error method
          });
  }
-const setData = () => {
 
-  return u_name.value;
-}
 ////////////////////////////////////////
 
 const goNext = () => {
@@ -382,6 +379,7 @@ const load = () => {
       }
       msg.innerHTML = '';
       start_btn.disabled = true;
+
       begin();
     } catch (err) {
       msg.innerHTML = err;
@@ -389,5 +387,6 @@ const load = () => {
   });
 
 }
-
+ var  test1 = u_name.value;
+export { test1};
 window.onload = load();
