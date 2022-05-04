@@ -301,7 +301,10 @@ const addAnswer = (answerTxt, idx) => {
              error(); // some error method
          });
  }
+const setData = () => {
 
+  return u_name.value;
+}
 ////////////////////////////////////////
 
 const goNext = () => {
