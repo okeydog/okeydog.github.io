@@ -10,8 +10,10 @@ const select = [];
 let qIdx = -1;
 
 
-import firebase from 'firebase/app';
-import 'firebase/database';
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from "firebase/firestore/lite";
+
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -24,9 +26,11 @@ const firebaseConfig = {
   appId: '1:123456789:web:abcdefghi123456789',
 };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+getAnalytics(app);
 
+// 이 값을 사용합니다.
+export const db = getFirestore(app);
 const goTo = (dest) => {
   let elem;
   let elemTop;
