@@ -386,7 +386,7 @@ const load = () => {
 timing = true;
 userEmail = u_name.value;
       begin();
-
+export let userInfo = [userEmail, dogPersonality,timing];
     } catch (err) {
       msg.innerHTML = err;
     }
