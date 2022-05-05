@@ -389,6 +389,6 @@ const load = () => {
 
 }
 // 배열 내보내기
-export let months = ['Jan', 'Feb', 'Mar','Apr', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+export let userInfo = [u_name.value, infoList[grade].name];
 
 window.onload = load();
