@@ -9,7 +9,8 @@ const ENDPOINT = 80;
 const select = [];
 let qIdx = -1;
 let timing = false;
-  let test = "u_name.value";
+  export let userEmail ="";
+  export let dogPersonality ="";
 
 // Import the functions you need from the SDKs you need
 
@@ -213,6 +214,7 @@ const goResult = () => {
 
   pTitle.innerHTML = infoList[grade].to;
   res_point.innerHTML = infoList[grade].name;
+  dogPersonality =infoList[grade].name;
   //pin.style.marginLeft = infoList[grade].mLeft;
   res_img.src = img_url;
   res_img.alt = infoList[grade].name;
@@ -382,7 +384,7 @@ const load = () => {
       msg.innerHTML = '';
       start_btn.disabled = true;
 timing = true;
-test = u_name.value;
+userEmail = u_name.value;
       begin();
 
     } catch (err) {
@@ -393,13 +395,8 @@ test = u_name.value;
 }
 
 // 배열 내보내기
-  //export let userInfo = [u_name.value, infoList[grade].name];
-if(timing){
-  console.log("나온다");
-  export { test };
+  export  let userInfo  = [u_name.value, infoList[grade].name ];
 
-}else{
-  console.log( "처음세팅");
-}
+  export default {userEmail, dogPersonality}
 
 window.onload = load();
