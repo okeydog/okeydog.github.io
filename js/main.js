@@ -388,6 +388,7 @@ const load = () => {
   });
 
 }
- var  test1 ="ss";
-export { test1 as default};
+// 배열 내보내기
+export let months = ['Jan', 'Feb', 'Mar','Apr', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
 window.onload = load();
