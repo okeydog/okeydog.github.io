@@ -398,5 +398,5 @@ userEmail = u_name.value;
  // export  let userInfo  = [u_name.value, infoList[grade].name ];
 
 
-export let userInfo = [userEmail, dogPersonality];
+export let userInfo = [userEmail, dogPersonality,timing];
 window.onload = load();
