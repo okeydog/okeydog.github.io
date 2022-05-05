@@ -8,7 +8,7 @@ const pcMQL = window.matchMedia("all and (min-width: 1024px)");
 const ENDPOINT = 80;
 const select = [];
 let qIdx = -1;
-
+let timing = false;
 
 // Import the functions you need from the SDKs you need
 
@@ -208,7 +208,7 @@ const goResult = () => {
   const res_img_div = document.querySelector('.art');
   const animal = document.querySelector('.result');
   const desc = document.querySelector('.res');
-  export let userInfo = [u_name.value, infoList[grade].name];
+
 
   pTitle.innerHTML = infoList[grade].to;
   res_point.innerHTML = infoList[grade].name;
@@ -380,7 +380,7 @@ const load = () => {
       }
       msg.innerHTML = '';
       start_btn.disabled = true;
-
+timing = true;
       begin();
 
     } catch (err) {
@@ -390,5 +390,13 @@ const load = () => {
 
 }
 // 배열 내보내기
+  //export let userInfo = [u_name.value, infoList[grade].name];
+if(timing){
+  console.log("나온다");
+  console.log( u_name.value);
+    export let userInfo = [u_name.value, u_name.value];
+}else{
+  console.log( "처음세팅");
+}
 
 window.onload = load();
