@@ -9,8 +9,8 @@ const ENDPOINT = 80;
 const select = [];
 let qIdx = -1;
 let timing = false;
-  export let userEmail ="";
-  export let dogPersonality ="";
+let userEmail ="";
+let dogPersonality ="";
 
 // Import the functions you need from the SDKs you need
 
@@ -395,8 +395,8 @@ userEmail = u_name.value;
 }
 
 // 배열 내보내기
-  export  let userInfo  = [u_name.value, infoList[grade].name ];
+ // export  let userInfo  = [u_name.value, infoList[grade].name ];
 
-  export default {userEmail, dogPersonality}
 
+export let userInfo = [userEmail, dogPersonality];
 window.onload = load();
