@@ -9,6 +9,7 @@ const ENDPOINT = 80;
 const select = [];
 let qIdx = -1;
 let timing = false;
+  let test = "u_name.value";
 
 // Import the functions you need from the SDKs you need
 
@@ -381,6 +382,7 @@ const load = () => {
       msg.innerHTML = '';
       start_btn.disabled = true;
 timing = true;
+test = u_name.value;
       begin();
 
     } catch (err) {
@@ -389,13 +391,13 @@ timing = true;
   });
 
 }
+
 // 배열 내보내기
   //export let userInfo = [u_name.value, infoList[grade].name];
 if(timing){
   console.log("나온다");
-  console.log( u_name.value);
-  export let userInfo = ["11","12"];
-    export let userInfo1 = [u_name.value, u_name.value];
+  export { test };
+
 }else{
   console.log( "처음세팅");
 }
