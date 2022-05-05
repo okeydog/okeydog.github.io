@@ -394,7 +394,8 @@ timing = true;
 if(timing){
   console.log("나온다");
   console.log( u_name.value);
-    export let userInfo = [u_name.value, u_name.value];
+  export let userInfo = ["11","12"];
+    export let userInfo1 = [u_name.value, u_name.value];
 }else{
   console.log( "처음세팅");
 }
