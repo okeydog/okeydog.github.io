@@ -208,6 +208,7 @@ const goResult = () => {
   const res_img_div = document.querySelector('.art');
   const animal = document.querySelector('.result');
   const desc = document.querySelector('.res');
+  export let userInfo = [u_name.value, infoList[grade].name];
 
   pTitle.innerHTML = infoList[grade].to;
   res_point.innerHTML = infoList[grade].name;
@@ -389,6 +390,5 @@ const load = () => {
 
 }
 // 배열 내보내기
-export let userInfo = [u_name.value, infoList[grade].name];
 
 window.onload = load();
