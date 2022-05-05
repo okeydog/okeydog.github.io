@@ -386,7 +386,6 @@ const load = () => {
 timing = true;
 userEmail = u_name.value;
       begin();
-export let userInfo = [userEmail, dogPersonality,timing];
     } catch (err) {
       msg.innerHTML = err;
     }
@@ -398,5 +397,5 @@ export let userInfo = [userEmail, dogPersonality,timing];
  // export  let userInfo  = [u_name.value, infoList[grade].name ];
 
 
-export let userInfo = [userEmail, dogPersonality,timing];
 window.onload = load();
+export let userInfo = [userEmail, dogPersonality,timing];
