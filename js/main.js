@@ -395,8 +395,20 @@ userEmail = u_name.value;
 
 // 배열 내보내기
  // export  let userInfo  = [u_name.value, infoList[grade].name ];
+var firebase = require("firebase/app");
+require("firebase/auth");
+require("firebase/firestore");
 
-
+  const firebaseConfig = {
+    apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
+    authDomain: "suerveyokeydoggy.firebaseapp.com",
+    databaseURL: "https://suerveyokeydoggy-default-rtdb.firebaseio.com",
+    projectId: "suerveyokeydoggy",
+    storageBucket: "suerveyokeydoggy.appspot.com",
+    messagingSenderId: "509585982228",
+    appId: "1:509585982228:web:5d589b8250bf518800b801",
+    measurementId: "G-DEY3MGS3XH"
+  };
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
