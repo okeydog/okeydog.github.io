@@ -238,23 +238,13 @@
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-
+const newUserRef = doc(collection(db, "users"));
   const start_btn = document.querySelector('.start');
 
   start_btn.addEventListener('click', () => {
     try {
       console.log(u_name.value);
-
-  try {
-  const docRef =  addDoc(collection(db, "users"), {
-    first: u_name.value,
-    last: "Lovelace",
-    born: 1815
-  });
-  console.log("Document written with ID: ", docRef.id);
-} catch (e) {
-  console.error("Error adding document: ", e);
-}
+      setDoc(newUserRef, { email: u_name.value }, { personality: "good" });
     } catch (err) {
       msg.innerHTML = err;
     }
