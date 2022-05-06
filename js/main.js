@@ -392,37 +392,19 @@ userEmail = u_name.value;
   });
 
 }
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
-    authDomain: "suerveyokeydoggy.firebaseapp.com",
-    databaseURL: "https://suerveyokeydoggy-default-rtdb.firebaseio.com",
-    projectId: "suerveyokeydoggy",
-    storageBucket: "suerveyokeydoggy.appspot.com",
-    messagingSenderId: "509585982228",
-    appId: "1:509585982228:web:5d589b8250bf518800b801",
-    measurementId: "G-DEY3MGS3XH"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-
-getAnalytics(app);
-if(timing){
-  console.log("jjjjjjjjjjjj");
-  console.log(userEmail);
-}
 
 // 배열 내보내기
  // export  let userInfo  = [u_name.value, infoList[grade].name ];
+var firebase = require("firebase/app");
 
-// export let userInfo = [userEmail, dogPersonality,timing];
+// Add the Firebase products that you want to use
+require("firebase/auth");
+require("firebase/firestore");
+import firebase from "firebase/app";
+
+// Add the Firebase services that you want to use
+import "firebase/auth";
+import "firebase/firestore";
+
 window.onload = load();
 
