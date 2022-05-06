@@ -395,7 +395,8 @@ userEmail = u_name.value;
  // export  let userInfo  = [u_name.value, infoList[grade].name ];
 
 
-const firebase = require("firebase");
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 
 
 try {
@@ -409,7 +410,7 @@ try {
     appId: "1:509585982228:web:5d589b8250bf518800b801",
     measurementId: "G-DEY3MGS3XH"
   };
-      firebase.initializeApp(firebaseConfig);
+      initializeApp(firebaseConfig);
     } catch (error) {
       console.log(error);
     }
