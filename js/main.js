@@ -399,8 +399,6 @@ const firebase = require("firebase");
 
 
 
-import { getAnalytics } from "firebase/analytics";
-
 
 try {
   const firebaseConfig = {
