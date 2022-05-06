@@ -13,6 +13,25 @@ let userEmail ="";
 let dogPersonality ="";
 
 // Import the functions you need from the SDKs you need
+import firebase from 'firebase';
+import 'firebase/auth';
+import 'firebase/database';
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
+    authDomain: "suerveyokeydoggy.firebaseapp.com",
+    databaseURL: "https://suerveyokeydoggy-default-rtdb.firebaseio.com",
+    projectId: "suerveyokeydoggy",
+    storageBucket: "suerveyokeydoggy.appspot.com",
+    messagingSenderId: "509585982228",
+    appId: "1:509585982228:web:5d589b8250bf518800b801",
+    measurementId: "G-DEY3MGS3XH"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  var otherDatabase = firebase.database(app);
+
 
 
   // Initialize Firebase
@@ -395,28 +414,9 @@ userEmail = u_name.value;
 
 // 배열 내보내기
  // export  let userInfo  = [u_name.value, infoList[grade].name ];
-import firebase from 'firebase';
-import 'firebase/auth';
-import 'firebase/firestore';
-import 'firebase/storage';
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
-    authDomain: "suerveyokeydoggy.firebaseapp.com",
-    databaseURL: "https://suerveyokeydoggy-default-rtdb.firebaseio.com",
-    projectId: "suerveyokeydoggy",
-    storageBucket: "suerveyokeydoggy.appspot.com",
-    messagingSenderId: "509585982228",
-    appId: "1:509585982228:web:5d589b8250bf518800b801",
-    measurementId: "G-DEY3MGS3XH"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
 
   console.log(app);
-  saveToFirebase("ss","11");
 
 window.onload = load();
 
