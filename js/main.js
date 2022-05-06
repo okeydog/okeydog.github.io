@@ -395,7 +395,10 @@ userEmail = u_name.value;
  // export  let userInfo  = [u_name.value, infoList[grade].name ];
 
 
-import { initializeApp } from "firebase/app";
+const firebase = require("firebase");
+
+
+
 import { getAnalytics } from "firebase/analytics";
 
 
