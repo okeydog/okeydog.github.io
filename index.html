@@ -244,17 +244,8 @@ const db = getFirestore(app);
   start_btn.addEventListener('click', () => {
     try {
       console.log(u_name.value);
+  saveToFirebase(u_name,"11");
 
-  try {
-  const docRef =  addDoc(collection(db, "users"), {
-    first: u_name.value,
-    last: "Lovelace",
-    born: 1815
-  });
-  console.log("Document written with ID: ", docRef.id);
-} catch (e) {
-  console.error("Error adding document: ", e);
-}
     } catch (err) {
       msg.innerHTML = err;
     }
