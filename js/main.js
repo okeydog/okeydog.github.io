@@ -13,28 +13,7 @@ let userEmail ="";
 let dogPersonality ="";
 
 // Import the functions you need from the SDKs you need
-import firebase from 'firebase';
-import 'firebase/auth';
-import 'firebase/database';
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
-    authDomain: "suerveyokeydoggy.firebaseapp.com",
-    databaseURL: "https://suerveyokeydoggy-default-rtdb.firebaseio.com",
-    projectId: "suerveyokeydoggy",
-    storageBucket: "suerveyokeydoggy.appspot.com",
-    messagingSenderId: "509585982228",
-    appId: "1:509585982228:web:5d589b8250bf518800b801",
-    measurementId: "G-DEY3MGS3XH"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  var otherDatabase = firebase.database(app);
-
-
-
-  // Initialize Firebase
 
 
 // 이 값을 사용합니다.
@@ -416,7 +395,28 @@ userEmail = u_name.value;
  // export  let userInfo  = [u_name.value, infoList[grade].name ];
 
 
-  console.log(app);
+const firebase = require("firebase");
 
+
+try {
+  const firebaseConfig = {
+    apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
+    authDomain: "suerveyokeydoggy.firebaseapp.com",
+    databaseURL: "https://suerveyokeydoggy-default-rtdb.firebaseio.com",
+    projectId: "suerveyokeydoggy",
+    storageBucket: "suerveyokeydoggy.appspot.com",
+    messagingSenderId: "509585982228",
+    appId: "1:509585982228:web:5d589b8250bf518800b801",
+    measurementId: "G-DEY3MGS3XH"
+  };
+      firebase.initializeApp(firebaseConfig);
+    } catch (error) {
+      console.log(error);
+    }
+
+
+
+
+  // Initialize Firebase
 window.onload = load();
 
