@@ -383,6 +383,7 @@ const load = () => {
       start_btn.disabled = true;
 timing = true;
 userEmail = u_name.value;
+ console.log(userEmail);
       begin();
     } catch (err) {
       msg.innerHTML = err;
