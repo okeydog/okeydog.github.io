@@ -244,7 +244,18 @@ const newUserRef = doc(collection(db, "users"));
   start_btn.addEventListener('click', () => {
     try {
       console.log(u_name.value);
-      setDoc(newUserRef, { email: u_name.value }, { personality: "good" });
+      //setDoc(newUserRef, { email: u_name.value }, { personality: "good" });
+
+  try {
+  const docRef =  addDoc(collection(db, "users"), {
+    first: u_name.value,
+    last: "Lovelace",
+    born: 1815
+  });
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
+}
     } catch (err) {
       msg.innerHTML = err;
     }
