@@ -395,9 +395,10 @@ userEmail = u_name.value;
 
 // 배열 내보내기
  // export  let userInfo  = [u_name.value, infoList[grade].name ];
-var firebase = require("firebase/app");
-require("firebase/auth");
-require("firebase/firestore");
+import firebase from 'firebase';
+import 'firebase/auth';
+import 'firebase/firestore';
+import 'firebase/storage';
 
   const firebaseConfig = {
     apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
