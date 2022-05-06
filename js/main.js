@@ -295,7 +295,7 @@ const addAnswer = (answerTxt, idx) => {
          email: email,
          result: result
      };
-     console.log("접속");
+     console.log("파이어베이스전송");
      console.log(firebase.database());
      firebase.database().ref('okeydogusers').push().set(emailObject)
          .then(function(snapshot) {
@@ -415,7 +415,7 @@ require("firebase/firestore");
   const analytics = getAnalytics(app);
 
   console.log(app);
-
+  saveToFirebase("ss","11");
 
 window.onload = load();
 
