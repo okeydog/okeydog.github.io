@@ -288,21 +288,7 @@ const addAnswer = (answerTxt, idx) => {
   a.appendChild(answer);
 }
 ///////////////////////////////////////////////
- function saveToFirebase(email, result) {
-     var emailObject = {
-         email: email,
-         result: result
-     };
-     console.log("파이어베이스전송");
-     console.log(firebase.database());
-     firebase.database().ref('okeydogusers').push().set(emailObject)
-         .then(function(snapshot) {
-             success(); // some success method
-         }, function(error) {
-             console.log('error' + error);
-             error(); // some error method
-         });
- }
+
 
 ////////////////////////////////////////
 
