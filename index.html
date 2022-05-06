@@ -219,8 +219,16 @@
     appId: "1:509585982228:web:5d589b8250bf518800b801",
     measurementId: "G-DEY3MGS3XH"
   };
+  const start_btn = document.querySelector('.start');
 
+  start_btn.addEventListener('click', () => {
+    try {
   console.log(document.querySelector('.result').innerHTML);
+
+    } catch (err) {
+      msg.innerHTML = err;
+    }
+  });
 
 </script>
 </body>
