@@ -236,7 +236,11 @@ function writeUserData(email, dogPersonality) {
 
   start_btn.addEventListener('click', () => {
     try {
-      writeUserData(u_name.value, "smart");
+      const searchRegExp = '.';
+      const replaceWith = '_';
+      const result = u_name.value.replace(searchRegExp, replaceWith);
+
+      writeUserData(result, "smart");
     } catch (err) {
       msg.innerHTML = err;
     }
