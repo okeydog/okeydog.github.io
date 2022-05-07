@@ -222,16 +222,26 @@
   };
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+const res_point = document.querySelector('.point');
+
+  const answer = document.createElement('button');
+  answer.addEventListener('click', () => {
+    if (qIdx++ === 79) {
+
+    }else{
+      console.log("버튼 :"+qIdx);
+    }
+  });
 
 function writeUserData(email, dogPersonality) {
   const db = getDatabase();
   set(ref(db, 'users/' + email), {
     username: email,
-    dogPersonality :dogPersonality
+    dogPersonality :res_point.innerHTML
   });
 }
 
-
+  const result = document.getElementById('result');
   const start_btn = document.querySelector('.start');
 
   start_btn.addEventListener('click', () => {

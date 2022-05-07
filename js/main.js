@@ -367,9 +367,9 @@ const load = () => {
       }
       msg.innerHTML = '';
       start_btn.disabled = true;
-timing = true;
-userEmail = u_name.value;
- console.log(userEmail);
+      timing = true;
+      userEmail = u_name.value;
+       console.log(userEmail);
       begin();
     } catch (err) {
       msg.innerHTML = err;
