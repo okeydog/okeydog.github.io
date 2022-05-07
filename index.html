@@ -226,16 +226,7 @@ const res_point = document.querySelector('.point');
 
 
 //////////////////////////////////////////////////////////////////
-const answer = document.createElement('button');
-  answer.className += 'a box';
-  answer.innerHTML = answerTxt;
-  answer.addEventListener('click', () => {
-    console.log("버튼 :"+qIdx);
 
-    if (qIdx++ === 79) {
-      console.log("완료 :"+qIdx);
-    }
-  });
 
 function writeUserData(email, dogPersonality) {
   const db = getDatabase();
@@ -245,7 +236,30 @@ function writeUserData(email, dogPersonality) {
   });
 }
 ////////////////////////////////////////////////////////
+  const addAnswer = (answerTxt, idx) => {
+  const answer = document.createElement('button');
+  const a = document.querySelector('.answer');
+  answer.className += 'a box';
+  answer.innerHTML = answerTxt;
+  answer.addEventListener('click', () => {
+    const parent = answer.parentNode;
+    const children = parent.childNodes;
+    for (let i in children) {
+      children[i].disabled = true;
+    }
+    parent.classList.add('fade-out-5-4');
+    setTimeout(() => {
+      select[qIdx] = idx;
+      a.innerHTML = '';
+      parent.classList.remove('fade-out-5-4');
+      goNext();
+    }, 800);
+  });
 
+  setTimeout(() => answer.style.animation =
+    'going-down 0.25s forwards, fade-in 0.25s forwards', 50);
+  a.appendChild(answer);
+}
 ///////////////////////////////////////////////
 
 
