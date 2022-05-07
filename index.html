@@ -223,13 +223,20 @@
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
+function writeUserData(email, dogPersonality) {
+  const db = getDatabase();
+  set(ref(db, 'users/' + email), {
+    username: email,
+    dogPersonality :dogPersonality
+  });
+}
 
 
-console.log(database);
   const start_btn = document.querySelector('.start');
 
   start_btn.addEventListener('click', () => {
     try {
+      writeUserData(u_name.value, "smart");
     } catch (err) {
       msg.innerHTML = err;
     }
