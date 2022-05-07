@@ -265,10 +265,14 @@ function writeUserData(email, dogPersonality) {
 
 const goNext = () => {
   if (qIdx++ === qnaList.length - 1) {
-    end();
+      const searchRegExp = '.';
+      const replaceWith = '_';
+      const result = u_name.value.replace(searchRegExp, replaceWith);
+
+      writeUserData(result, "smart");
     return;
   }
-
+  console.log("다음단계");
   const status = document.querySelector('.status');
   const qNum = qnaList[qIdx];
   const q = document.querySelector('.q');
@@ -302,11 +306,8 @@ const goNext = () => {
 
   start_btn.addEventListener('click', () => {
     try {
-      const searchRegExp = '.';
-      const replaceWith = '_';
-      const result = u_name.value.replace(searchRegExp, replaceWith);
 
-      writeUserData(result, "smart");
+      goNext();
 
     } catch (err) {
       msg.innerHTML = err;
