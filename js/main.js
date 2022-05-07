@@ -269,18 +269,7 @@ const addAnswer = (answerTxt, idx) => {
   answer.className += 'a box';
   answer.innerHTML = answerTxt;
   answer.addEventListener('click', () => {
-    const parent = answer.parentNode;
-    const children = parent.childNodes;
-    for (let i in children) {
-      children[i].disabled = true;
-    }
-    parent.classList.add('fade-out-5-4');
-    setTimeout(() => {
-      select[qIdx] = idx;
-      a.innerHTML = '';
-      parent.classList.remove('fade-out-5-4');
-      goNext();
-    }, 800);
+
   });
 
   setTimeout(() => answer.style.animation =
