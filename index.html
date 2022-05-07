@@ -240,10 +240,13 @@ const db = getFirestore(app);
 
   //const newUserRef = doc(collection(db, "users"));/
   const usersCollectionRef = collection(db, "users");
+  console.log(db);
 
+console.log(usersCollectionRef);
   const start_btn = document.querySelector('.start');
   const addData = async () => {
     try {
+
       const res = await addDoc(usersCollectionRef, {
         age: 29,
         name: "kyounghwan"
