@@ -377,8 +377,8 @@ const load = () => {
   });
 
 }
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-database.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-app.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-database.js";
 const firebaseConfig = {
     apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
     authDomain: "suerveyokeydoggy.firebaseapp.com",
