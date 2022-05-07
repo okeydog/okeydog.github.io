@@ -377,8 +377,20 @@ const load = () => {
   });
 
 }
-
-// 배열 내보내기
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-database.js";
+const firebaseConfig = {
+    apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
+    authDomain: "suerveyokeydoggy.firebaseapp.com",
+    databaseURL: "https://suerveyokeydoggy-default-rtdb.firebaseio.com",
+    projectId: "suerveyokeydoggy",
+    storageBucket: "suerveyokeydoggy.appspot.com",
+    messagingSenderId: "509585982228",
+    appId: "1:509585982228:web:5d589b8250bf518800b801",
+    measurementId: "G-DEY3MGS3XH"
+  };
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
  // export  let userInfo  = [u_name.value, infoList[grade].name ];
 
 
