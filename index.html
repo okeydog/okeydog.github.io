@@ -239,7 +239,7 @@ function writeUserData(email, dogPersonality) {
   const addAnswer = (answerTxt, idx) => {
   const answer = document.createElement('button');
   const a = document.querySelector('.answer');
-  answer.className += 'a box';
+
   answer.innerHTML = answerTxt;
   answer.addEventListener('click', () => {
     const parent = answer.parentNode;
