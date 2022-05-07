@@ -238,24 +238,24 @@
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const newUserRef = doc(collection(db, "users"));
-  const start_btn = document.querySelector('.start');
+  //const newUserRef = doc(collection(db, "users"));/
+  const usersCollectionRef = collection(db, "users");
 
+  const start_btn = document.querySelector('.start');
+  const addData = async () => {
+    try {
+      const res = await addDoc(usersCollectionRef, {
+        age: 29,
+        name: "kyounghwan"
+      });
+      console.log(res); // res는 undefined입니다.
+    } catch (e) {
+      console.log(e);
+    }
+  };
   start_btn.addEventListener('click', () => {
     try {
-      console.log(u_name.value);
-      //setDoc(newUserRef, { email: u_name.value }, { personality: "good" });
-
-  try {
-  const docRef =  addDoc(collection(db, "users"), {
-    first: u_name.value,
-    last: "Lovelace",
-    born: 1815
-  });
-  console.log("Document written with ID: ", docRef.id);
-} catch (e) {
-  console.error("Error adding document: ", e);
-}
+      addData();
     } catch (err) {
       msg.innerHTML = err;
     }
