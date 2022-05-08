@@ -381,8 +381,8 @@ const load = () => {
 // import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-database.js";
 
 
-import initializeApp from 'firebase/app'
-import { getDatabase, ref, onValue} from "firebase/database";
+const firebase = require ('firebase/app');
+const   database =require ("firebase/database");
 
 const firebaseConfig = {
     apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
@@ -394,10 +394,10 @@ const firebaseConfig = {
     appId: "1:509585982228:web:5d589b8250bf518800b801",
     measurementId: "G-DEY3MGS3XH"
   };
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
+const app = firebase.initializeApp(firebaseConfig);
+const database = database.getDatabase(app);
  // export  let userInfo  = [u_name.value, infoList[grade].name ];
-
+s
 
 
   // Initialize Firebase
