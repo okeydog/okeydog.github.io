@@ -220,7 +220,7 @@ const goResult = () => {
   res_img_div.appendChild(res_img);
   animal.innerHTML = infoList[grade].from;
   desc.innerHTML = infoList[grade].desc;
-
+  writeUserData(u_name.value, dogPersonality);
   setTimeout(() => {
     header.style.display = 'block';
     footer.style.display = 'block';
@@ -381,8 +381,7 @@ const load = () => {
 // import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-database.js";
 
 
-const firebase = require ('firebase/app');
-const   database =require ("firebase/database");
+const firebase = require ('firebase');
 
 const firebaseConfig = {
     apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
@@ -395,10 +394,17 @@ const firebaseConfig = {
     measurementId: "G-DEY3MGS3XH"
   };
 const app = firebase.initializeApp(firebaseConfig);
-const database = database.getDatabase(app);
- // export  let userInfo  = [u_name.value, infoList[grade].name ];
-s
+const database = firebase.database();
 
+ // export  let userInfo  = [u_name.value, infoList[grade].name ];
+firebase.database.ref
+function writeUserData(email, dogPersonality) {
+  const db = firebase.database();
+  firebase.database.set(firebase.database.ref(db, 'users/' + email), {
+    username: email,
+    dogPersonality : dogPersonality
+  });
+}
 
   // Initialize Firebase
 window.onload = load();

@@ -235,63 +235,6 @@ function writeUserData(email, dogPersonality) {
     dogPersonality :res_point.innerHTML
   });
 }
-////////////////////////////////////////////////////////
-  const addAnswer = (answerTxt, idx) => {
-  const answer = document.createElement('button');
-  const a = document.querySelector('.answer');
-  answer.className += 'a box';
-  answer.innerHTML = answerTxt;
-  answer.addEventListener('click', () => {
-    const parent = answer.parentNode;
-    const children = parent.childNodes;
-    for (let i in children) {
-      children[i].disabled = true;
-    }
-    parent.classList.add('fade-out-5-4');
-    setTimeout(() => {
-      select[qIdx] = idx;
-      a.innerHTML = '';
-      parent.classList.remove('fade-out-5-4');
-      goNext();
-    }, 800);
-  });
-
-  setTimeout(() => answer.style.animation =
-    'going-down 0.25s forwards, fade-in 0.25s forwards', 50);
-  a.appendChild(answer);
-}
-///////////////////////////////////////////////
-
-
-const goNext = () => {
-  if (qIdx++ === qnaList.length - 1) {
-      const searchRegExp = '.';
-      const replaceWith = '_';
-      const result = u_name.value.replace(searchRegExp, replaceWith);
-
-      writeUserData(result, "smart");
-    return;
-  }
-  console.log("다음단계");
-  const status = document.querySelector('.status');
-  const qNum = qnaList[qIdx];
-  const q = document.querySelector('.q');
-
-  status.style.width = ((10 * (qIdx + 1)))/8 + '%';
-  q.innerHTML = qNum.q;
-  qna.style.animation =
-    'fade-in 0.3s ease-in-out 0.4s forwards, ' +
-    'going-down 0.3s ease-in-out 0.4s forwards';
-
-  setTimeout(() => {
-    const endIdx = qNum.a.length - 1;
-    for (let i in qNum.a) {
-      addAnswer(qNum.a[i].answer, i);
-    }
-    qna.style.opacity = 1;
-  }, 700);
-}
-  ///////////////////////////////
 
 
 
@@ -307,7 +250,6 @@ const goNext = () => {
   start_btn.addEventListener('click', () => {
     try {
 
-      goNext();
 
     } catch (err) {
       msg.innerHTML = err;
