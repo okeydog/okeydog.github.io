@@ -161,13 +161,13 @@
       <div class="caution">
         <p>
           이 성격 검사 테스트는 강아지의 심리를 주로 다루는
-          <a href="https://www.instagram.com/okdog.lab" target="_blank" title="해외학술(DPQ)">해외 학술 연구</a>를 바탕으로 제작되었습니다.<br><br>
-          <span class="warning">성격 검사 테스트에서 쓰인 모든 내용에 대한 상업적 이용을 금지합니다.</span><br>
+          <a href="https://gosling.psy.utexas.edu/wp-content/uploads/2014/10/DPQ-forms-and-scoring-keys.pdf" target="_blank" title="해외학술(DPQ)">해외 학술 연구</a>를 바탕으로 제작되었습니다.<br><br>
+          <span class="warning">성격 검사 테스트에서 쓰인 모든 내용에 대한 상업적 이용을 금지합니다.</span><br><br>
           해당 내용의 저작권은 OkeyDoggy에게 있습니다.<br>
           성격 검사 테스트지에 대해 자세히 알고 싶다면
           <a href="https://www.instagram.com/okdog.lab" target="_blank" title="인스타그램">오키도기(인스타그램)</a>과
-          <a href="https://www.youtube.com/channel/UComBmlkG4hRBj1jcGGJ2fDQ/videos" target="_blank" title="유튜브 채널">오키도기(유튜브채널)</a>에 들어오시면
-          됩니다.<br>
+          <a href="https://www.youtube.com/channel/UComBmlkG4hRBj1jcGGJ2fDQ/videos" target="_blank" title="유튜브 채널">오키도기(유튜브채널)</a>에 들어오셔서
+          확인할 수 있습니다.<br><br>
           궁금한점이 있으시다면
           <a href="mailto:gaebalnaebal@gmail.com" target="_blank" title="이메일 전송">이메일</a>로 부탁드립니다.<br>
 
@@ -178,11 +178,7 @@
         <p>
           성격 검사 결과가 마음에 드셨나요?
         </p>
-      <button class="go-origin btn">
-        <a href="https://gosling.psy.utexas.edu/wp-content/uploads/2014/10/DPQ-forms-and-scoring-keys.pdf" target="_blank" title="글 남기기">
-          문의 사항 남기기
-        </a>
-      </button>
+      <button class="go-origin btn"> 문의 사항 남기기 </button>
     </section>
     <footer id="footer">
       <div>
@@ -223,18 +219,19 @@
     measurementId: "G-DEY3MGS3XH"
   };
 const app = initializeApp(firebaseConfig);
-
+ const db = getDatabase();
 
 
 //////////////////////////////////////////////////////////////////
 
 
-function writeUserData(email, dogPersonality) {
-  const db = getDatabase();
+function writeUserData(email, dogPersonality, survey, opinion) {
   email = email.replace('.', '_');
   set(ref(db, 'users/' + email), {
     username: email,
-    dogPersonality :dogPersonality
+    dogPersonality :dogPersonality,
+    survey : survey,
+    opinion : opinion
   });
 }
 
@@ -483,7 +480,24 @@ const goResult = () => {
   animal.innerHTML = infoList[grade].from;
   desc.innerHTML = infoList[grade].desc;
 
-  writeUserData(u_name.value,infoList[grade].name)
+  writeUserData(u_name.value,infoList[grade].namem,"","")
+  const opinion_btn = document.querySelector('.go-origin btn');
+
+
+    opinion_btn.addEventListener('click', () => {
+    try {
+      ref(db, 'users/' + email+'/opinion').set = "1";
+    } catch (err) {
+      msg.innerHTML = err;
+    }
+
+
+  });
+
+
+
+
+
 
   setTimeout(() => {
     header.style.display = 'block';
@@ -636,7 +650,6 @@ const load = () => {
       timing = true;
       userEmail = u_name.value;
        //console.log(userEmail);
-       writeUserData(u_name.value,"smart")
      if (/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(u_name.value) ){
         begin();
 
