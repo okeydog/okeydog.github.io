@@ -526,7 +526,8 @@ const addAnswer = (answerTxt, idx) => {
     const parent = answer.parentNode;
     const children = parent.childNodes;
     for (let i in children) {
-      console.log(i +"  answer : "+answer);
+      if(isNaN(i) == false){
+              console.log(i +"  answer : "+answer);
       console.log(i +"  className : "+answer.parentNode);
 
       console.log(i +" value : "+answer.value);
@@ -535,6 +536,8 @@ const addAnswer = (answerTxt, idx) => {
       console.log(i +" children : "+children[i].disabled.valueOf());
 
       children[i].disabled = true;
+      }
+
     }
     parent.classList.add('fade-out-5-4');
     setTimeout(() => {
