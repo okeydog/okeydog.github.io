@@ -636,7 +636,10 @@ const load = () => {
      if (email_format.test(u_name.value)){
         begin();
 
-      }
+      }else{
+        throw '메일을 정확히 기입해주세요.';
+
+     }
     } catch (err) {
       msg.innerHTML = err;
     }
