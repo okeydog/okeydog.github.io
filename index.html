@@ -481,18 +481,18 @@ const goResult = () => {
   desc.innerHTML = infoList[grade].desc;
 
   writeUserData(u_name.value,infoList[grade].name,"11111","2222")
-  // const opinion_btn = document.querySelector('.go-origin btn');
-  //
-  //
-  //   opinion_btn.addEventListener('click', () => {
-  //   try {
-  //     ref(db, 'users/' + email+'/opinion').set = "1";
-  //   } catch (err) {
-  //     msg.innerHTML = err;
-  //   }
-  //
-  //
-  // });
+  const opinion_btn = document.querySelector('.go-origin btn');
+
+
+    opinion_btn.addEventListener('click', () => {
+    try {
+      ref(db, 'users/' + email+'/opinion').set = "1";
+    } catch (err) {
+      msg.innerHTML = err;
+    }
+
+
+  });
 
 
 
