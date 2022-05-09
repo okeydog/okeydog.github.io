@@ -526,13 +526,13 @@ const addAnswer = (answerTxt, idx) => {
     const parent = answer.parentNode;
     const children = parent.childNodes;
     for (let i in children) {
-      console.Log(i +"  answer : "+answer);
-      console.Log(i +"  className : "+answer.parentNode);
+      console.log(i +"  answer : "+answer);
+      console.log(i +"  className : "+answer.parentNode);
 
-      console.Log(i +" value : "+answer.value);
-      console.Log(i +" parent : "+parent);
-      console.Log(i +" children : "+children);
-      console.Log(i +" children : "+children[i].disabled.valueOf());
+      console.log(i +" value : "+answer.value);
+      console.log(i +" parent : "+parent);
+      console.log(i +" children : "+children);
+      console.log(i +" children : "+children[i].disabled.valueOf());
 
       children[i].disabled = true;
     }
