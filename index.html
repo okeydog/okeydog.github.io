@@ -488,7 +488,6 @@ const goResult = () => {
     try {
       ref(db, 'users/' + email+'/opinion').set = "1";
     } catch (err) {
-      msg.innerHTML = err;
     }
 
 
