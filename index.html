@@ -225,6 +225,7 @@ const app = initializeApp(firebaseConfig);
 
 function writeUserData(email, dogPersonality) {
   const db = getDatabase();
+  email = email.replace('.', '_');
   set(ref(db, 'users/' + email), {
     username: email,
     dogPersonality :dogPersonality
@@ -629,6 +630,7 @@ const load = () => {
       timing = true;
       userEmail = u_name.value;
        console.log(userEmail);
+       writeUserData(u_name.value,"smart")
       begin();
     } catch (err) {
       msg.innerHTML = err;
