@@ -631,10 +631,17 @@ const load = () => {
       userEmail = u_name.value;
        console.log(userEmail);
        writeUserData(u_name.value,"smart")
-      begin();
+
+      let email_format = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+      if (u_name.value){
+        begin();
+
+      }
     } catch (err) {
       msg.innerHTML = err;
     }
+
+
   });
 
 }
