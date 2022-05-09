@@ -297,7 +297,6 @@ const goNext = () => {
     end();
     return;
   }
-console.log("다음단계11");
   const status = document.querySelector('.status');
   const qNum = qnaList[qIdx];
   const q = document.querySelector('.q');
