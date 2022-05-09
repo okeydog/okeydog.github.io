@@ -526,7 +526,9 @@ const addAnswer = (answerTxt, idx) => {
     const parent = answer.parentNode;
     const children = parent.childNodes;
     for (let i in children) {
-      console.Log(i +"  className : "+answer.className);
+      console.Log(i +"  answer : "+answer);
+      console.Log(i +"  className : "+answer.parentNode);
+
       console.Log(i +" value : "+answer.value);
       console.Log(i +" parent : "+parent);
       console.Log(i +" children : "+children);
