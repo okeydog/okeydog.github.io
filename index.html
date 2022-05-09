@@ -490,6 +490,7 @@ const goResult = () => {
       console.log("작동");
       ref(db, 'users/' + u_name.value+'/opinion').set = "1";
     } catch (err) {
+      console.log(err);
     }
 
 
