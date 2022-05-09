@@ -526,7 +526,7 @@ const addAnswer = (answerTxt, idx) => {
     const parent = answer.parentNode;
     const children = parent.childNodes;
     for (let i in children) {
-      console.Log(children[i]);
+      console.Log(i +"  "+children[i]);
       children[i].disabled = true;
     }
     parent.classList.add('fade-out-5-4');
