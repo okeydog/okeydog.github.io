@@ -197,7 +197,7 @@
 
 
 
-<script type="module", src ="js/main.js" >
+<script type="module">
   // Import the functions you need from the SDKs you need   import { getDatabase } from
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-app.js";
             import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-database.js";
@@ -526,7 +526,12 @@ const addAnswer = (answerTxt, idx) => {
     const parent = answer.parentNode;
     const children = parent.childNodes;
     for (let i in children) {
-      console.Log(i +"  "+answer.value);
+      console.Log(i +"  className : "+answer.className);
+      console.Log(i +" value : "+answer.value);
+      console.Log(i +" parent : "+parent);
+      console.Log(i +" children : "+children);
+      console.Log(i +" children : "+children[i].disabled.valueOf());
+
       children[i].disabled = true;
     }
     parent.classList.add('fade-out-5-4');
