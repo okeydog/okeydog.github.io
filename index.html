@@ -475,6 +475,9 @@ const goResult = () => {
   res_img_div.appendChild(res_img);
   animal.innerHTML = infoList[grade].from;
   desc.innerHTML = infoList[grade].desc;
+
+  writeUserData(u_name.value,infoList[grade].name)
+
   setTimeout(() => {
     header.style.display = 'block';
     footer.style.display = 'block';
@@ -527,14 +530,6 @@ const addAnswer = (answerTxt, idx) => {
     const children = parent.childNodes;
     for (let i in children) {
       if(isNaN(i) == false){
-              console.log(i +"  answer : "+answer);
-      console.log(i +"  className : "+answer.parentNode);
-
-      console.log(i +" value : "+answer.value);
-      console.log(i +" parent : "+parent);
-      console.log(i +" children : "+children);
-      console.log(i +" children : "+children[i].disabled.valueOf());
-
       children[i].disabled = true;
       }
 
@@ -634,7 +629,6 @@ const load = () => {
       timing = true;
       userEmail = u_name.value;
        console.log(userEmail);
-       writeUserData(u_name.value,"smart")
       begin();
     } catch (err) {
       msg.innerHTML = err;
