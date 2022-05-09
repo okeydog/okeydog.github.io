@@ -633,7 +633,7 @@ const load = () => {
        writeUserData(u_name.value,"smart")
 
       let email_format = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
-     if (email_format.test(u_name.value)){
+     if (email_format.match(u_name.value)){
         begin();
 
       }else{
