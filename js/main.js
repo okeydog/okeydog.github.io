@@ -220,7 +220,6 @@ const goResult = () => {
   res_img_div.appendChild(res_img);
   animal.innerHTML = infoList[grade].from;
   desc.innerHTML = infoList[grade].desc;
-  writeUserData(u_name.value, dogPersonality);
   setTimeout(() => {
     header.style.display = 'block';
     footer.style.display = 'block';
