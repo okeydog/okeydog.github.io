@@ -208,6 +208,27 @@
             //import { getFirestore,addDoc , collection,doc, getDoc, setDoc, updateDoc, Timestamp } from  "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
 
 
+const firebaseConfig = {
+    apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
+    authDomain: "suerveyokeydoggy.firebaseapp.com",
+    databaseURL: "https://suerveyokeydoggy-default-rtdb.firebaseio.com",
+    projectId: "suerveyokeydoggy",
+    storageBucket: "suerveyokeydoggy.appspot.com",
+    messagingSenderId: "509585982228",
+    appId: "1:509585982228:web:5d589b8250bf518800b801",
+    measurementId: "G-DEY3MGS3XH"
+  };
+const app = initializeApp(firebaseConfig);
+
+
+function writeUserData(email, dogPersonality) {
+  const db = getDatabase(app);
+  set(ref(db, 'users/' + email), {
+    username: email,
+    dogPersonality : dogPersonality
+  });
+}
+
 const header = document.getElementById('header');
 const footer = document.getElementById('footer');
 const qna = document.getElementById('qna');
@@ -589,34 +610,6 @@ const load = () => {
 }
 // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-app.js";
 // import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-database.js";
-
-
-const firebase = require ('firebase');
-require('electron-reload')(__dirname, {
-        electron : require(`${__dirname}/node_modules/electron`)
-})
-const firebaseConfig = {
-    apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
-    authDomain: "suerveyokeydoggy.firebaseapp.com",
-    databaseURL: "https://suerveyokeydoggy-default-rtdb.firebaseio.com",
-    projectId: "suerveyokeydoggy",
-    storageBucket: "suerveyokeydoggy.appspot.com",
-    messagingSenderId: "509585982228",
-    appId: "1:509585982228:web:5d589b8250bf518800b801",
-    measurementId: "G-DEY3MGS3XH"
-  };
-const app = firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
-
- // export  let userInfo  = [u_name.value, infoList[grade].name ];
-firebase.database.ref
-function writeUserData(email, dogPersonality) {
-  const db = firebase.database();
-  firebase.database.set(firebase.database.ref(db, 'users/' + email), {
-    username: email,
-    dogPersonality : dogPersonality
-  });
-}
 
   // Initialize Firebase
 window.onload = load();
