@@ -631,13 +631,14 @@ const load = () => {
       userEmail = u_name.value;
        console.log(userEmail);
        writeUserData(u_name.value,"smart")
-console.log("통과전");
-      let email_format = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        console.log("통과전");
      if (/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(u_name.value) ){
        console.log("통과");
         begin();
 
-      }
+      }else{
+       history.go(0);
+     }
     } catch (err) {
       msg.innerHTML = err;
     }
