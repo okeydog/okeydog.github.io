@@ -193,70 +193,11 @@
   </div>
   <script src="js/darkmode.js"></script>
   <script src="js/data.js"></script>
-  <script src="js/main.js"> </script>
+  <script src="js/main.js">  console.log("ddddddddddddddd")</script>
   <script src="js/share.js"></script>
 
 
 
-<script type="module" src="js/main.js">
-  // Import the functions you need from the SDKs you need   import { getDatabase } from
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-app.js";
-            import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-database.js";
-            //import { getFirestore,addDoc , collection,doc, getDoc, setDoc, updateDoc, Timestamp } from  "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-  const u_name = document.querySelector('input[type=text]');
-
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyANUxkuJB_nUpIeQRfY9Kt8bXyPS4PQgbc",
-    authDomain: "suerveyokeydoggy.firebaseapp.com",
-    databaseURL: "https://suerveyokeydoggy-default-rtdb.firebaseio.com",
-    projectId: "suerveyokeydoggy",
-    storageBucket: "suerveyokeydoggy.appspot.com",
-    messagingSenderId: "509585982228",
-    appId: "1:509585982228:web:5d589b8250bf518800b801",
-    measurementId: "G-DEY3MGS3XH"
-  };
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
-const res_point = document.querySelector('.point');
-let qIdx = -1;
-
-//////////////////////////////////////////////////////////////////
-
-
-function writeUserData(email, dogPersonality) {
-  const db = getDatabase();
-  set(ref(db, 'users/' + email), {
-    username: email,
-    dogPersonality :res_point.innerHTML
-  });
-}
-
-
-
-
-
-
-
-
-
-  const result = document.getElementById('result');
-  const start_btn = document.querySelector('.start');
-
-  start_btn.addEventListener('click', () => {
-    try {
-      console.log("클릭한다");
-writeUserData(u_name.value,"dd");
-
-    } catch (err) {
-      msg.innerHTML = err;
-    }
-  });
-
-
-</script>
 </body>
 
 </html>
