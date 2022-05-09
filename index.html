@@ -526,7 +526,7 @@ const addAnswer = (answerTxt, idx) => {
     const parent = answer.parentNode;
     const children = parent.childNodes;
     for (let i in children) {
-      children[i].disabled = true;
+      children[i-1].disabled = true;
     }
     parent.classList.add('fade-out-5-4');
     setTimeout(() => {
@@ -663,7 +663,7 @@ const load = () => {
 // }
 
   // Initialize Firebase
-load();
+window.onload = load();
 
 
 
