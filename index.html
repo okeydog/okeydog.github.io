@@ -202,7 +202,15 @@ function resize(obj) {
 </script>
           </form>
 
-      <button class="go-origin"> 문의사항 남기기 </button>
+      <button class="go-origin" onclick="popup();" > 문의사항 남기기 </button>
+          <script>
+        function popup(){
+            var url = "https://www.okeydoggy.co.kr/";
+            var name = "감사합니다. 더 나은 오키도기가 되겠습니다";
+            var option = "width = 500, height = 500, top = 100, left = 200, location = no"
+            window.open(url, name, option);
+        }
+    </script>
     </section>
     <footer id="footer">
       <div>
