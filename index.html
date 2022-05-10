@@ -505,13 +505,12 @@ const goResult = () => {
 
     opinion_btn.addEventListener('click', () => {
     try {
-      console.log("작동");
 
         console.log(opinion1.value);
 
     surveyList.forEach((node) => {
     if(node.checked)  {
-      console.log( node.value);
+      writeUserData(u_name.value,infoList[grade].name,node.value,opinion1.value.name)
     }
   })
       //writeUserData(u_name.value,infoList[grade].name,surveyList.name,opinion1.value.name)
