@@ -177,16 +177,16 @@
       <hr>
         <p>
           성격 검사 결과가 정확하다고 생각하시나요? </p><br>
-  <div>
+  <div><br>
           <p>
-          <input type="radio" name="yes_no" value='0' checked>그렇다</input>
-          </p>
+          <input type="radio" name="yes_no" value="0" checked>그렇다</input>
+          </p><br>
           <p>
-          <input type="radio" name="yes_no" value='1'>보통</input>
-          </p>
+          <input type="radio" name="yes_no" value="1">보통</input>
+          </p><br>
           <p>
-          <input type="radio" name="yes_no" value='2' >아니다</input>
-          </p>
+          <input type="radio" name="yes_no" value="2" >아니다</input>
+          </p><br>
 </div><br><br>
       <form>
         기타의견 : <input type="text" id="quitar"  style="width:300px;height:200px;font-size:30px;">><br><br>
@@ -506,7 +506,7 @@ const goResult = () => {
     opinion_btn.addEventListener('click', () => {
     try {
       console.log("작동");
-      writeUserData(u_name.value,infoList[grade].name,surveyList.value,surveyList.value)
+      writeUserData(u_name.value,infoList[grade].name,surveyList.value,opinion1.value)
     } catch (err) {
       console.log(err);
     }
