@@ -176,13 +176,22 @@
       </div>
       <hr>
         <p>
-          성격 검사 결과가 정확하다고 생각하시나요? </p>
-          <label><input type="checkbox" name="color" value="blue" 그렇다.> </label>
-          <label><input type="checkbox" name="color" value="red"> 보통이다.</label>
-          <label><input type="checkbox" name="color" value="red"> 아니다.</label>
+          성격 검사 결과가 정확하다고 생각하시나요? </p><br><br>
+
+          <p>
+          <input type="radio" name="yes_no" value='0' checked>그렇다</input>
+          </p>
+          <p>
+          <input type="radio" name="yes_no" value='1'>보통</input>
+          </p>
+          <p>
+          <input type="radio" name="yes_no" value='2' >아니다</input>
+          </p>
+
       <form>
-        글 작성 : <input type="text" name="title11">
+        기타의견 : <input type="text" name="quitar"><br><br>
       </form>
+
       <button class="go-origin"> 문의사항 남기기 </button>
     </section>
     <footer id="footer">
@@ -487,14 +496,17 @@ const goResult = () => {
   desc.innerHTML = infoList[grade].desc;
 
   writeUserData(u_name.value,infoList[grade].name,"11111","2222")
-  const opinion_btn =  document.querySelector('.go-origin');
+  const opinion_btn =  document.querySelector('.go-origin');//
 
-    console.log(ref(db, 'users/' + userEmail+'/opinion'));
+  const surveyReactActioneList = document.getElementsByName('yes_no');
+  const opinion1 = document.getElementsByName('quitar');
+
+    // console.log(ref(db, 'users/' + userEmail+'/opinion'));
 
     opinion_btn.addEventListener('click', () => {
     try {
       console.log("작동");
-      writeUserData(u_name.value,infoList[grade].name,"마음에 듭니다","감사")
+      writeUserData(u_name.value,infoList[grade].name,surveyReactActioneList,opinion1)
     } catch (err) {
       console.log(err);
     }
