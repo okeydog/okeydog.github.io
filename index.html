@@ -189,9 +189,17 @@
           </p><br>
 </div><br><br>
           <form>
-            <p><textarea id="quitar" rows="20" cols="85">
-          성격 검사 결과에 대해 이야기하고 싶은 것이 있다면 말씀해주세요
+            <style>
+            textarea.autosize { min-height: 50px; }
+            </style>
+            <p><textarea id="quitar" class="autosize" onkeydown="resize(this)" onkeyup="resize(this)" placeholder="성격 검사 결과에 대해 이야기하고 싶은 것이 있다면 말씀해주세요.">
             </textarea></p>
+            <script>
+function resize(obj) {
+  obj.style.height = "1px";
+  obj.style.height = (12+obj.scrollHeight)+"px";
+}
+</script>
           </form>
 
       <button class="go-origin"> 문의사항 남기기 </button>
