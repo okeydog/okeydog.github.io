@@ -489,7 +489,7 @@ const goResult = () => {
     opinion_btn.addEventListener('click', () => {
     try {
       console.log("작동");
-      ref(db, 'users/' + userEmail+'/opinion').update = "1";
+      writeUserData(u_name.value,infoList[grade].name,"마음에 듭니다","감사")
     } catch (err) {
       console.log(err);
     }
