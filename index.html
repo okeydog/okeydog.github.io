@@ -189,7 +189,7 @@
           </p>
 
       <form>
-        기타의견 : <input type="text" name="quitar"><br><br>
+        기타의견 : <input type="text" id="quitar"><br><br>
       </form>
 
       <button class="go-origin"> 문의사항 남기기 </button>
@@ -499,7 +499,7 @@ const goResult = () => {
   const opinion_btn =  document.querySelector('.go-origin');//
 
   const surveyReactActioneList = document.getElementsByName('yes_no');
-  const opinion1 = document.getElementsByName('quitar');
+  const opinion1 = document.getElementById('quitar');
 
     // console.log(ref(db, 'users/' + userEmail+'/opinion'));
 
