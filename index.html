@@ -190,7 +190,7 @@
 </div><br><br>
           <form>
             <style>
-            textarea.autosize { min-height: 50px; }
+            textarea.autosize { min-height: 50px; min-width: 250px;}
             </style>
             <p><textarea id="quitar" class="autosize" onkeydown="resize(this)" onkeyup="resize(this)" placeholder="성격 검사 결과에 대해 이야기하고 싶은 것이 있다면 말씀해주세요.">
             </textarea></p>
@@ -205,7 +205,7 @@ function resize(obj) {
       <button class="go-origin" onclick="popup();" > 문의사항 남기기 </button>
           <script>
         function popup(){
-            var url = "https://www.okeydoggy.co.kr/";
+            var url = "popup.html";
             var name = "감사합니다. 더 나은 오키도기가 되겠습니다";
             var option = "width = 500, height = 500, top = 100, left = 200, location = no"
             window.open(url, name, option);
