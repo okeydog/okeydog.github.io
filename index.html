@@ -202,8 +202,11 @@ function resize(obj) {
 </script>
           </form>
 
+
+
+
       <div class="wrap">
-        <button class="pop_info_1" class="btn_open">문의사항 남기기</button>
+        <button href="#pop_info_1" class="btn_open">문의사항 남기기 </button>
 
         <div id="pop_info_1" class="pop_wrap" style="display:none;">
           <div class="pop_inner">
@@ -535,7 +538,7 @@ const goResult = () => {
   desc.innerHTML = infoList[grade].desc;
 
   writeUserData(u_name.value,infoList[grade].name,"11111","2222")
-  const opinion_btn =  document.querySelector('.go-origin');//
+  const opinion_btn =  document.querySelector('.btn_open');//
 
   const surveyList = document.getElementsByName('yes_no');
   const opinion1 = document.getElementById('quitar');
