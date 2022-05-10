@@ -506,7 +506,9 @@ const goResult = () => {
     opinion_btn.addEventListener('click', () => {
     try {
       console.log("작동");
-      writeUserData(u_name.value,infoList[grade].name,surveyList.value,opinion1.value)
+        console.log(surveyList.name);
+    console.log(opinion1.value.name);
+      //writeUserData(u_name.value,infoList[grade].name,surveyList.name,opinion1.value.name)
     } catch (err) {
       console.log(err);
     }
