@@ -489,7 +489,7 @@ const goResult = () => {
     opinion_btn.addEventListener('click', () => {
     try {
       console.log("작동");
-      ref(db, 'users/' + userEmail+'/opinion').set = "1";
+      ref(db, 'users/' + userEmail+'/opinion').update = "1";
     } catch (err) {
       console.log(err);
     }
