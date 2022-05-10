@@ -506,12 +506,14 @@ const goResult = () => {
     opinion_btn.addEventListener('click', () => {
     try {
       console.log("작동");
-              console.log(surveyList);
-        console.log(opinion1);
-        console.log(surveyList.toString());
-        console.log(opinion1.toString());
-        console.log(surveyList.value);
+
         console.log(opinion1.value);
+
+    surveyList.forEach((node) => {
+    if(node.checked)  {
+      console.log( node.value);
+    }
+  })
       //writeUserData(u_name.value,infoList[grade].name,surveyList.name,opinion1.value.name)
     } catch (err) {
       console.log(err);
